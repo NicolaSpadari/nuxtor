@@ -1,0 +1,31 @@
+{
+	// Enable the ESlint flat config support
+	"eslint.experimental.useFlatConfig": true,
+
+	// Use eslint as default formatter
+	"editor.formatOnSave": false,
+
+	// Auto fix
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never"
+	},
+
+	// Enable eslint for all supported languages
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"yaml",
+		"toml"
+	],
+
+	// Use .config directory
+	"eslint.options": {
+		"overrideConfigFile": ".config/eslint.mjs"
+	}
+}
