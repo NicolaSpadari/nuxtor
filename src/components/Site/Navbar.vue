@@ -1,8 +1,8 @@
 <template>
 	<header class="top-0 z-10">
-		<nav crate flex items-center justify-between py-6>
+		<nav flex items-center justify-between py-6 crate>
 			<div class="flex lg:flex-1">
-				<NuxtLink to="/" class="p-1.5 -m-1.5">
+				<NuxtLink to="/" class="home p-1.5 -m-1.5">
 					<span class="sr-only">{{ name }}</span>
 					<SvgoLogo :font-controlled="false" size-8 />
 				</NuxtLink>
@@ -16,10 +16,18 @@
 				</button>
 			</div>
 			<div hidden lg="flex gap-x-12">
-				<NuxtLink to="/command" class="text-sm text-white font-semibold leading-6">Command</NuxtLink>
-				<NuxtLink to="/notification" class="text-sm text-white font-semibold leading-6">Notification</NuxtLink>
-				<NuxtLink to="/os" class="text-sm text-white font-semibold leading-6">OS Information</NuxtLink>
-				<NuxtLink to="/this-page-does-not-exist" class="text-sm text-white font-semibold leading-6">404</NuxtLink>
+				<NuxtLink to="/commands" class="text-sm text-white font-semibold leading-6">
+					Commands
+				</NuxtLink>
+				<NuxtLink to="/notifications" class="text-sm text-white font-semibold leading-6">
+					Notifications
+				</NuxtLink>
+				<NuxtLink to="/os" class="text-sm text-white font-semibold leading-6">
+					OS Informations
+				</NuxtLink>
+				<NuxtLink to="/foo" class="text-sm text-white font-semibold leading-6">
+					404
+				</NuxtLink>
 			</div>
 			<div hidden lg="flex flex-1 justify-end">
 				<p class="text-sm text-white font-semibold leading-6">
@@ -65,3 +73,9 @@
 	const { name } = useConstants();
 	const tauriVersion = await getTauriVersion();
 </script>
+
+<style scoped>
+	.router-link-exact-active:not(.home){
+		@apply text-emerald-500;
+	}
+</style>
