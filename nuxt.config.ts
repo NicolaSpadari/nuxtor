@@ -56,11 +56,13 @@ export default defineNuxtConfig({
 		envPrefix: ["VITE_", "TAURI_"],
 		server: {
 			strictPort: true,
-			hmr: mobile ? {
-				protocol: "ws",
-				host: await internalIpV4(),
-				port: 3001,
-			} : undefined,
+			hmr: mobile
+				? {
+					protocol: "ws",
+					host: await internalIpV4(),
+					port: 3001
+				}
+				: undefined,
 			watch: {
 				ignored: ["**/src-tauri/**"]
 			}
@@ -81,8 +83,9 @@ export default defineNuxtConfig({
 			routes: ["/"]
 		}
 	},
-	// sourcemap: {
-	// 	server: true,
-	// 	client: false
-	// }
+	eslint: {
+		config: {
+			standalone: false
+		}
+	}
 });

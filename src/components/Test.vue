@@ -9,8 +9,8 @@
 <script lang="ts" setup>
 	const version = await getTauriVersion();
 
-	const result = await Command.create('exec-sh', [
-		'-c',
-		"echo 'Hello World!'",
+	const result = await Command.create("exec-sh", [
+		"-c",
+		"echo 'Hello World!'"
 	]).execute();
 </script>

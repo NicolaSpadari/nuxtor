@@ -2,20 +2,25 @@
 name = "nuxtor"
 version = "1.0.0"
 description = "Starter template for Nuxt 3 with Tauri"
-authors = ["NicolaSpadari"]
+authors = [ "NicolaSpadari" ]
 license = "MIT"
 repository = "https://github.com/NicolaSpadari/nuxtor"
 edition = "2021"
 
 [lib]
 name = "nuxtor_lib"
-crate-type = ["staticlib", "cdylib", "rlib", "lib"]
+crate-type = [
+  "staticlib",
+  "cdylib",
+  "rlib",
+  "lib"
+]
 
 [build-dependencies]
 tauri-build = { version = "2.0.0-beta", features = [] }
 
 [dependencies]
-tauri = { version = "2.0.0-beta", features = ["tray-icon"] }
+tauri = { version = "2.0.0-beta", features = [ "tray-icon" ] }
 tauri-plugin-shell = "2.0.0-beta"
-serde = { version = "1", features = ["derive"] }
+serde = { version = "1", features = [ "derive" ] }
 serde_json = "1"

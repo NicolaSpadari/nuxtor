@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-	html {
+html {
 	-webkit-tap-highlight-color: transparent;
 	scroll-behavior: smooth;
 	@apply min-h-screen;

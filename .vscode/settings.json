@@ -22,10 +22,5 @@
 		"jsonc",
 		"yaml",
 		"toml"
-	],
-
-	// Use .config directory
-	"eslint.options": {
-		"overrideConfigFile": ".config/eslint.mjs"
-	}
+	]
 }
