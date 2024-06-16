@@ -31,26 +31,6 @@ export default defineNuxtConfig({
 	css: [
 		"@unocss/reset/tailwind.css"
 	],
-	imports: {
-		presets: [
-			{
-				from: "@tauri-apps/api/app",
-				imports: ["getName", "getVersion", "getTauriVersion"]
-			},
-			{
-				from: "@tauri-apps/plugin-shell",
-				imports: ["Command"]
-			},
-			{
-				from: "@tauri-apps/plugin-os",
-				imports: ["platform"]
-			},
-			{
-				from: "@tauri-apps/plugin-notification",
-				imports: ["sendNotification", "requestPermission", "isPermissionGranted"]
-			}
-		]
-	},
 	vite: {
 		clearScreen: false,
 		envPrefix: ["VITE_", "TAURI_"],
