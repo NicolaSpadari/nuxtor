@@ -20,10 +20,7 @@ export default defineNuxtConfig({
 			],
 			bodyAttrs: {
 				class: "font-text antialiased"
-			},
-			noscript: [
-				{ children: "JavaScript is required to run this project" }
-			]
+			}
 		},
 		pageTransition: {
 			name: "page",
@@ -69,11 +66,6 @@ export default defineNuxtConfig({
 	ssr: false,
 	devServer: {
 		host: "0.0.0.0"
-	},
-	nitro: {
-		prerender: {
-			routes: ["/"]
-		}
 	},
 	eslint: {
 		config: {
