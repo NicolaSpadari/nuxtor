@@ -1,6 +1,8 @@
 <template>
 	<Body bg-dark-800 text-white>
-		<NuxtPage />
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
 	</Body>
 </template>
 
@@ -19,12 +21,18 @@ img {
 }
 
 // Transitions
-.fade-enter-active,
-.fade-leave-active {
+.page-enter-active,
+.page-leave-active {
 	@apply transition-opacity ease-in-out duration-300;
 }
-.fade-enter-from,
-.fade-leave-to {
+.layout-enter-active,
+.layout-leave-active {
+	@apply transition-opacity ease-in-out duration-500;
+}
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to {
 	@apply opacity-0;
 }
 </style>

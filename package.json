@@ -37,6 +37,7 @@
 		"eslint": "8.57.0",
 		"internal-ip": "^8.0.0",
 		"nuxt": "^3.12.1",
+		"nuxt-svgo": "^4.0.1",
 		"sass": "^1.77.5",
 		"typescript": "^5.4.5",
 		"unplugin-auto-import": "^0.17.6"

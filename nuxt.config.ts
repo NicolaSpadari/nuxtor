@@ -7,6 +7,7 @@ export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
+		"nuxt-svgo",
 		"@nuxt/eslint"
 	],
 	app: {
@@ -23,6 +24,14 @@ export default defineNuxtConfig({
 			noscript: [
 				{ children: "JavaScript is required to run this project" }
 			]
+		},
+		pageTransition: {
+			name: "page",
+			mode: "out-in"
+		},
+		layoutTransition: {
+			name: "layout",
+			mode: "out-in"
 		}
 	},
 	experimental: {
@@ -31,6 +40,9 @@ export default defineNuxtConfig({
 	css: [
 		"@unocss/reset/tailwind.css"
 	],
+	svgo: {
+		autoImportPath: "@/assets/"
+	},
 	vite: {
 		clearScreen: false,
 		envPrefix: ["VITE_", "TAURI_"],
