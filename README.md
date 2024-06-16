@@ -1,6 +1,8 @@
 <h1 align="center">Nuxtor</h1>
 <hr />
 
+**⚠️ `nuxtor` is still a WIP ⚠️**
+
 ## Usage
 
 Clone to local:
