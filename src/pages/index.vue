@@ -1,5 +1,5 @@
 <template>
-	<div relative isolate overflow-hidden px-6 lg="px-8">
+	<div relative overflow-hidden px-6 lg="px-8">
 		<div grid mx-auto h-screen max-w-2xl place-content-center>
 			<SvgoLogo :filled="true" :font-controlled="false" mx-auto mb-8 size-40 />
 
@@ -23,10 +23,14 @@
 				</p>
 				<div mt-15>
 					<Hyperlink :to="repo">
-						Made by {{ author }}
+						Star on GitHub
 					</Hyperlink>
 				</div>
 			</div>
+		</div>
+
+		<div fixed text-sm bottom-6 absolute-center-h>
+			<p text-sm text-neutral-500>Made by {{ author }}</p>
 		</div>
 	</div>
 </template>

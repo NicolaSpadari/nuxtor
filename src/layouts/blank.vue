@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<SiteNavbar />
+		<SiteNavbar sticky />
+		<SiteSidebar />
+
 		<slot />
 	</div>
 </template>
