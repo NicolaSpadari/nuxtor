@@ -1,3 +1,8 @@
+import { internalIpV4 } from "internal-ip";
+
+// @ts-expect-error process is a nodejs global
+const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -15,9 +20,6 @@ export default defineNuxtConfig({
 			bodyAttrs: {
 				class: "font-text antialiased"
 			},
-			link: [
-				{ rel: "shortcut-icon", href: "/favicon.svg" }
-			],
 			noscript: [
 				{ children: "JavaScript is required to run this project" }
 			]
@@ -36,15 +38,15 @@ export default defineNuxtConfig({
 				imports: ["getName", "getVersion", "getTauriVersion"]
 			},
 			{
-				from: "@tauri-apps/api/shell",
+				from: "@tauri-apps/plugin-shell",
 				imports: ["Command"]
 			},
 			{
-				from: "@tauri-apps/api/os",
+				from: "@tauri-apps/plugin-os",
 				imports: ["platform"]
 			},
 			{
-				from: "@tauri-apps/api/notification",
+				from: "@tauri-apps/plugin-notification",
 				imports: ["sendNotification", "requestPermission", "isPermissionGranted"]
 			}
 		]
@@ -54,11 +56,11 @@ export default defineNuxtConfig({
 		envPrefix: ["VITE_", "TAURI_"],
 		server: {
 			strictPort: true,
-			hmr: {
+			hmr: mobile ? {
 				protocol: "ws",
-				host: "0.0.0.0",
-				port: 3001
-			},
+				host: await internalIpV4(),
+				port: 3001,
+			} : undefined,
 			watch: {
 				ignored: ["**/src-tauri/**"]
 			}

@@ -20,21 +20,25 @@
 		"tauri:build": "tauri build"
 	},
 	"dependencies": {
-		"@tauri-apps/api": "^1"
+		"@tauri-apps/api": ">=2.0.0-beta.13",
+		"@tauri-apps/plugin-notification": "2.0.0-beta.5",
+		"@tauri-apps/plugin-os": "2.0.0-beta.5",
+		"@tauri-apps/plugin-shell": "2.0.0-beta.6"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.21.1",
 		"@iconify-json/heroicons-solid": "^1.1.11",
+		"@nuxt/eslint": "^0.3.13",
+		"@tauri-apps/cli": ">=2.0.0-beta.20",
 		"@unocss/eslint-plugin": "^0.61.0",
 		"@unocss/nuxt": "^0.61.0",
 		"@vueuse/core": "^10.11.0",
 		"@vueuse/nuxt": "^10.11.0",
 		"eslint": "8.57.0",
-		"@nuxt/eslint": "^0.3.13",
+		"internal-ip": "^8.0.0",
 		"nuxt": "^3.12.1",
 		"sass": "^1.77.5",
 		"typescript": "^5.4.5",
-		"unplugin-auto-import": "^0.17.6",
-		"@tauri-apps/cli": "^1"
+		"unplugin-auto-import": "^0.17.6"
 	}
 }

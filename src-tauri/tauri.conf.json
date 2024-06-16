@@ -1,79 +1,56 @@
 {
-    "package": {
-        "productName": "nuxtor",
-        "version": "1.0.0"
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": ""
     },
-    "build": {
-        "distDir": "../dist",
-        "devPath": "http://localhost:3000",
-        "beforeDevCommand": "pnpm dev",
-        "beforeBuildCommand": "pnpm generate"
-    },
-    "tauri": {
-        "systemTray": {
-            "iconPath": "./icons/icon.png",
-            "iconAsTemplate": true
-        },
-        "bundle": {
-            "active": true,
-            "targets": "all",
-            "identifier": "com.nicolaspadari.nuxtor",
-            "icon": [
-                "icons/32x32.png",
-                "icons/128x128.png",
-                "icons/128x128@2x.png",
-                "icons/icon.icns",
-                "icons/icon.ico"
-            ],
-            "resources": [],
-            "externalBin": [],
-            "copyright": "",
-            "category": "DeveloperTool",
-            "shortDescription": "",
-            "longDescription": "",
-            "deb": {},
-            "macOS": {},
-            "windows": {
-                "certificateThumbprint": null,
-                "digestAlgorithm": "sha256",
-                "timestampUrl": ""
-            }
-        },
-        "updater": {
-            "active": false
-        },
-        "allowlist": {
-            "shell": {
-                "all": true,
-				"open": true,
-                "scope": [
-                    {
-                        "name": "cmd",
-                        "cmd": "cmd",
-                        "args": ["/C", { "validator": "\\S+" }]
-                    },
-                    {
-                        "name": "pwsh",
-                        "cmd": "pwsh",
-                        "args": ["-Command", { "validator": "\\S+" }]
-                    }
-                ]
-            },
-            "notification": {
-                "all": true
-            }
-        },
-        "windows": [
-            {
-                "title": "Nuxtor",
-                "width": 1920,
-                "height": 1080,
-                "resizable": true,
-                "fullscreen": false
-            }
-        ],
-        "security": {
-            "csp": null
-        }
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": [],
+    "copyright": "",
+    "category": "DeveloperTool",
+    "shortDescription": "",
+    "longDescription": "",
+    "macOS": {},
+    "linux": {
+      "deb": {}
     }
+  },
+  "build": {
+    "beforeBuildCommand": "pnpm generate",
+    "frontendDist": "../dist",
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:3000"
+  },
+  "productName": "nuxtor",
+  "version": "1.0.0",
+  "identifier": "com.nicolaspadari.nuxtor",
+  "plugins": {},
+  "app": {
+    "windows": [
+      {
+        "title": "Nuxtor",
+        "width": 1920,
+        "height": 1080,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "trayIcon": {
+      "iconPath": "./icons/icon.png",
+      "iconAsTemplate": true
+    }
+  }
 }
