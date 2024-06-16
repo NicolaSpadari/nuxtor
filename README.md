@@ -17,10 +17,3 @@ Run project:
 ```sh
 $ pnpm run dev
 ```
-
-<!--
-	TODO:
-	- Fix eslint
-	- Complete app
-	- Better readme
--->
