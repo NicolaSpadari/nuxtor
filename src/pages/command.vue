@@ -1,7 +1,7 @@
 <template>
 	<div class="isolate">
 		<div class="grid grid-cols-1 lg:grid-cols-2">
-			<div class="px-6 pb-10 pt-12 lg:px-8 lg:py-24 sm:pt-16">
+			<div class="px-6 pb-10 pt-12 lg:px-8 lg:pt-22 sm:pt-16">
 				<div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
 					<h2 class="text-3xl text-white font-bold tracking-tight">
 						Command
@@ -11,7 +11,7 @@
 					</p>
 				</div>
 			</div>
-			<form class="px-6 pb-10 pt-12 lg:px-8 lg:py-24 sm:pt-16" @submit.prevent="sendCommand()">
+			<form class="px-6 pb-10 pt-12 lg:px-8 lg:pt-22 sm:pt-16" @submit.prevent="sendCommand()">
 				<div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
 					<div class="grid grid-cols-1 gap-x-8 gap-y-6">
 						<div>

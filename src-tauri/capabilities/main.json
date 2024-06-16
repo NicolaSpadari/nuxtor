@@ -30,6 +30,10 @@
 			]
 		},
 		"notification:default",
-		"os:allow-platform"
+		"os:allow-platform",
+		"os:allow-arch",
+		"os:allow-family",
+		"os:allow-version",
+		"os:allow-locale"
 	]
 }
