@@ -27,6 +27,8 @@
 					"sidecar": false
 				}
 			]
-		}
+		},
+		"notification:default",
+		"os:allow-platform"
 	]
 }
