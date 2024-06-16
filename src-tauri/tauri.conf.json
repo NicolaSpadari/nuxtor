@@ -39,8 +39,10 @@
 		"windows": [
 			{
 				"title": "Nuxtor",
-				"width": 1280,
-				"height": 720,
+				"width": 1366,
+				"height": 768,
+				"minWidth": 375,
+				"minHeight": 812,
 				"resizable": true,
 				"fullscreen": false
 			}
