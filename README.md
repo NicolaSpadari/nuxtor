@@ -2,22 +2,27 @@
     <img width="150" src="./src/assets/logo.svg" alt="logo">
 </p>
 <h1 align="center">NUXTOR</h1>
-<hr />
 <p align="center">
-A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a> made with <a href="https://nuxt.com">Nuxt 3</a> and <a href="https://tauri.app">Tauri 2</a>
+A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a>, made with <a href="https://nuxt.com">Nuxt 3</a> and <a href="https://tauri.app">Tauri 2</a>
 <br>
 Build super fast desktop applications!
 </p>
 
-**⚠️ `nuxtor` is still a WIP ⚠️**
+>**⚠️ `nuxtor` is still a WIP**
+
+<br />
 
 <img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
+
+<br />
 
 <div align="center">
 <img src="./screenshot.png">
 </div>
 
-<br><br>
+<p align="center">Powered by Nuxt 3</p>
+
+<br />
 
 ## Technologies run-down
 
