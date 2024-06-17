@@ -6,6 +6,7 @@
 	"packageManager": "pnpm@9.3.0",
 	"description": "Starter template for Nuxt 3 with Tauri",
 	"author": "Nicola Spadari",
+	"license": "MIT",
 	"engines": {
 		"node": ">=20"
 	},
