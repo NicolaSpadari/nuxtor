@@ -31,7 +31,7 @@
 		"beforeDevCommand": "pnpm dev",
 		"devUrl": "http://localhost:3000"
 	},
-	"productName": "nuxtor",
+	"productName": "Nuxtor",
 	"version": "0.0.1",
 	"identifier": "com.nicolaspadari.nuxtor",
 	"plugins": {},
