@@ -1,9 +1,9 @@
-name: "publish"
+name: publish
 
 on:
   push:
     branches:
-      -  main
+      - main
 jobs:
   publish-tauri:
     permissions:
@@ -12,13 +12,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: "macos-latest" # for Arm based macs (M1 and above).
-            args: "--target aarch64-apple-darwin"
-          - platform: "macos-latest" # for Intel based macs.
-            args: "--target x86_64-apple-darwin"
-          - platform: "ubuntu-22.04"
+          - platform: macos-latest # for Arm based macs.
+            args: --target aarch64-apple-darwin
+          - platform: macos-latest # for Intel based macs.
+            args: --target x86_64-apple-darwin
+          - platform: ubuntu-22.04
             args: ""
-          - platform: "windows-latest"
+          - platform: windows-latest
             args: ""
 
     runs-on: ${{ matrix.platform }}
@@ -43,6 +43,11 @@ jobs:
           sudo apt-get install -y libwebkit2gtk-4.0-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
         # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.3.0
+
       - name: install frontend dependencies
         run: pnpm install
 
@@ -51,8 +56,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: nuxtor-v__VERSION__
-          releaseName: "Nuxtor v__VERSION__"
-          releaseBody: "Choose a bundle generated from the Tauri build for your system"
-          releaseDraft: true
+          releaseName: Nuxtor v__VERSION__
+          releaseBody: Choose a bundle generated from the Tauri build for your system
+          releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
