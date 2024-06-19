@@ -71,6 +71,14 @@ Build super fast desktop applications!
 
 This command will generate the Nuxt static output and bundle the project under `src-tauri/target`.
 
+## Debug
+
+  ```sh
+  $ pnpm run tauri:build:debug
+  ```
+
+The same Tauri bundle will generate under `src-tauri/target`, but with the ability to open the console.
+
 ## Notes
 
 - Tauri v2 is still in beta. Some things might not work, or present some bugs.
