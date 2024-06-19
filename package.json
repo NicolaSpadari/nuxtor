@@ -21,7 +21,8 @@
 		"bump:major": "tsx scripts/bump.ts major && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
 		"tauri": "tauri",
 		"tauri:dev": "tauri dev",
-		"tauri:build": "tauri build"
+		"tauri:build": "tauri build",
+		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
 		"@tauri-apps/api": ">=2.0.0-beta.13",
