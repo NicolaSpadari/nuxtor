@@ -36,9 +36,9 @@ Build super fast desktop applications!
 ## Functionalities
 
 - Run shell commands from the app
-- Send custom notifications to the client
+- Send custom notifications to the client (remember to turn on/grant notifications in your computer settings!)
 - Display OS related informations
-- Support catch-all route
+- Support all nuxt functionalities (routing/layout/middleware/modules/etc...)
 
 ## Setup
 
