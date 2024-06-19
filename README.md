@@ -12,7 +12,10 @@ Build super fast desktop applications!
 
 <br />
 
-<img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
+<p float="left">
+	<img src="https://img.shields.io/github/package-json/v/NicolaSpadari/nuxtor" />
+	<img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
+</p>
 
 <br />
 
