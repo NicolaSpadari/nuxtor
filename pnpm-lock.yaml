@@ -24,6 +24,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^2.21.1
         version: 2.21.1(@unocss/eslint-plugin@0.61.0(eslint@8.57.0)(typescript@5.4.5))(@vue/compiler-sfc@3.4.29)(eslint-plugin-format@0.1.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.4.5)
+      '@iarna/toml':
+        specifier: ^2.2.5
+        version: 2.2.5
       '@iconify-json/heroicons-solid':
         specifier: ^1.1.11
         version: 1.1.11
@@ -814,6 +817,9 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+
+  '@iarna/toml@2.2.5':
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
   '@iconify-json/heroicons-solid@1.1.11':
     resolution: {integrity: sha512-Nzhjs8voo4d+gcrfhlY/F0bRonEmLHT1+DeD2nYubvAF151pxXPqTS9bRB49Hqpdxl1l9LS2VTPtQPRypj/csQ==}
@@ -6001,6 +6007,8 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.3': {}
+
+  '@iarna/toml@2.2.5': {}
 
   '@iconify-json/heroicons-solid@1.1.11':
     dependencies:

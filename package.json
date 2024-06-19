@@ -16,6 +16,9 @@
 		"preinstall": "npx only-allow pnpm",
 		"postinstall": "nuxt prepare",
 		"lint": "eslint . --fix",
+		"bump:patch": "tsx scripts/bump.ts patch && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
+		"bump:minor": "tsx scripts/bump.ts minor && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
+		"bump:major": "tsx scripts/bump.ts major && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
 		"tauri": "tauri",
 		"tauri:dev": "tauri dev",
 		"tauri:build": "tauri build"
@@ -28,6 +31,7 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.21.1",
+		"@iarna/toml": "^2.2.5",
 		"@iconify-json/heroicons-solid": "^1.1.11",
 		"@nuxt/eslint": "^0.3.13",
 		"@tauri-apps/cli": ">=2.0.0-beta.20",
