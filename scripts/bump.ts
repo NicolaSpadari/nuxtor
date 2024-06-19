@@ -36,6 +36,8 @@ const tauriToml = parse(readFileSync("./src-tauri/Cargo.toml", "utf-8"));
 
 packageJson.version = bumpVersion(packageJson.version);
 tauriConfig.version = bumpVersion(tauriConfig.version);
+
+// @ts-expect-error No interface for parsed TOML
 tauriToml.package.version = bumpVersion(tauriToml.package.version);
 
 writeFileSync("./package.json", JSON.stringify(packageJson, null, "\t"));
