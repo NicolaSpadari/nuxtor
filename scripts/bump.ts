@@ -11,23 +11,22 @@ const bumpVersion = (currentVersion: string) => {
 	let minor = Number.parseInt(parts[1], 10);
 	let patch = Number.parseInt(parts[2], 10);
 
-	if (method === "patch")
+	if (method === "patch") {
 		patch += 1;
-	if (method === "minor")
+	} else if (method === "minor") {
 		minor += 1;
-	if (method === "major")
-		major += 1;
-
-	if (patch >= 10) {
 		patch = 0;
-		minor += 1;
-		if (minor >= 10) {
-			minor = 0;
-			major += 1;
-		}
+	} else if (method === "major") {
+		major += 1;
+		minor = 0;
+		patch = 0;
 	}
 
-	return `${major}.${minor}.${patch}`;
+	const newVersion = `${major}.${minor}.${patch}`;
+
+	console.log(`Version bumped to ${newVersion}`);
+
+	return newVersion;
 };
 
 const packageJson = JSON.parse(readFileSync("./package.json", "utf-8"));
