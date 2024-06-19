@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="150" src="./src/assets/logo.svg" alt="logo">
+    <img width="150" src="./src/public/logo.png" alt="logo">
 </p>
 <h1 align="center">NUXTOR</h1>
 <p align="center">
@@ -17,7 +17,7 @@ Build super fast desktop applications!
 <br />
 
 <div align="center">
-<img src="./screenshot.png">
+<img src="./src/public/screenshot.png">
 </div>
 
 <p align="center">Powered by Nuxt 3</p>
