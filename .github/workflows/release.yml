@@ -28,7 +28,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 20.10.0
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -46,7 +46,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.3.0
+          version: 9.4.0
 
       - name: install frontend dependencies
         run: pnpm install
@@ -57,7 +57,7 @@ jobs:
         with:
           tagName: nuxtor-v__VERSION__
           releaseName: Nuxtor v__VERSION__
-          releaseBody: Choose a bundle generated from the Tauri build for your system
+          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/nuxtor.app" once before launching
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
