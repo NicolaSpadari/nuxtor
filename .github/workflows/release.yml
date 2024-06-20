@@ -57,7 +57,7 @@ jobs:
         with:
           tagName: nuxtor-v__VERSION__
           releaseName: Nuxtor v__VERSION__
-          releaseBody: Choose a bundle generated from the Tauri build for your system
+          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/nuxtor.app" once before launching
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
