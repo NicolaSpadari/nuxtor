@@ -11,6 +11,9 @@ importers:
       '@tauri-apps/api':
         specifier: '>=2.0.0-beta.14'
         version: 2.0.0-beta.14
+      '@tauri-apps/plugin-fs':
+        specifier: 2.0.0-beta.6
+        version: 2.0.0-beta.6
       '@tauri-apps/plugin-notification':
         specifier: 2.0.0-beta.6
         version: 2.0.0-beta.6
@@ -1686,6 +1689,9 @@ packages:
     resolution: {integrity: sha512-lqV4pD0iTs8ASd19slH0eRoVAjbxtD0cCsZFVD7kG4sYkeZ0IkvtxbvnHAOUbALfvnHZr1dVXFDVxQUqJK2OXw==}
     engines: {node: '>= 10'}
     hasBin: true
+
+  '@tauri-apps/plugin-fs@2.0.0-beta.6':
+    resolution: {integrity: sha512-R7M5wggENzJhiA0HwP63AzdF6uzdXRYe0z+ETSue9gvJmqKtqVp+qx9JLsWSfwENHy8RDKmrnuDL18kx/Q2aFA==}
 
   '@tauri-apps/plugin-notification@2.0.0-beta.6':
     resolution: {integrity: sha512-KoYxGuBn3MIzTFyEhwh5O1VYGSwIplmABlYrDnLudf81Y8zKAIuJ8lnGprtiiUfU2ycXQH/0Zr/ku/NU8a+wdA==}
@@ -7137,6 +7143,10 @@ snapshots:
       '@tauri-apps/cli-win32-arm64-msvc': 2.0.0-beta.21
       '@tauri-apps/cli-win32-ia32-msvc': 2.0.0-beta.21
       '@tauri-apps/cli-win32-x64-msvc': 2.0.0-beta.21
+
+  '@tauri-apps/plugin-fs@2.0.0-beta.6':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.14
 
   '@tauri-apps/plugin-notification@2.0.0-beta.6':
     dependencies:

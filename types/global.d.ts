@@ -1,3 +1,3 @@
-declare interface MyTest {
-	text: string
+declare interface ModuleOptions {
+	prefix: false | string
 }

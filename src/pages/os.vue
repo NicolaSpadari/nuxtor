@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-	const currentPlatform = await platform();
-	const currentArch = await arch();
-	const currentVersion = await version();
-	const currentLocale = await locale() || "Not detectable";
+	const currentPlatform = await useTauriOsPlatform();
+	const currentArch = await useTauriOsArch();
+	const currentVersion = await useTauriOsVersion();
+	const currentLocale = await useTauriOsLocale() || "Not detectable";
 </script>

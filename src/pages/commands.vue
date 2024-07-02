@@ -34,7 +34,7 @@
 	const result = ref("");
 
 	const sendCommand = async () => {
-		const response = await Command.create("exec-sh", [
+		const response = await useTauriShellCommand.create("exec-sh", [
 			"-c",
 			input.value
 		]).execute();
