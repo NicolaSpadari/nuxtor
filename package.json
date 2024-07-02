@@ -30,7 +30,6 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.21.2",
-		"@iarna/toml": "^2.2.5",
 		"@iconify-json/heroicons-solid": "^1.1.11",
 		"@nuxt/eslint": "^0.3.13",
 		"@tauri-apps/cli": ">=2.0.0-beta.21",
@@ -40,11 +39,9 @@
 		"@vueuse/nuxt": "^10.11.0",
 		"bumpp": "^9.4.1",
 		"eslint": "8.57.0",
-		"internal-ip": "^8.0.0",
 		"nuxt": "^3.12.3",
 		"nuxt-svgo": "^4.0.1",
 		"sass": "^1.77.6",
-		"tsx": "^4.16.0",
 		"typescript": "^5.5.3",
 		"unplugin-auto-import": "^0.17.6"
 	}

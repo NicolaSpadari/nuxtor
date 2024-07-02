@@ -1,8 +1,3 @@
-import { internalIpV4 } from "internal-ip";
-
-// @ts-expect-error process is a nodejs global
-const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
-
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -45,13 +40,11 @@ export default defineNuxtConfig({
 		envPrefix: ["VITE_", "TAURI_"],
 		server: {
 			strictPort: true,
-			hmr: mobile
-				? {
-					protocol: "ws",
-					host: await internalIpV4(),
-					port: 3001
-				}
-				: undefined,
+			hmr: {
+				protocol: "ws",
+				host: "0.0.0.0",
+				port: 3001
+			},
 			watch: {
 				ignored: ["**/src-tauri/**"]
 			}
