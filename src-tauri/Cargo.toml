@@ -1,6 +1,6 @@
 [package]
 name = "nuxtor"
-version = "0.0.2"
+version = "0.0.3"
 description = "Starter template for Nuxt 3 with Tauri"
 authors = [ "NicolaSpadari" ]
 license = "MIT"
