@@ -34,6 +34,8 @@
 		"os:allow-arch",
 		"os:allow-family",
 		"os:allow-version",
-		"os:allow-locale"
+		"os:allow-locale",
+		"fs:allow-document-read",
+		"fs:allow-document-write"
 	]
 }

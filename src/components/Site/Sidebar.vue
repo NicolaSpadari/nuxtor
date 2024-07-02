@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts" setup>
-	const tauriVersion = await getTauriVersion();
+	const tauriVersion = await useTauriAppGetTauriVersion();
 	const { showSidebar } = useSidebar();
 </script>
 

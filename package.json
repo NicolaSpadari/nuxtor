@@ -1,7 +1,7 @@
 {
 	"name": "nuxtor",
 	"type": "module",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": true,
 	"packageManager": "pnpm@9.4.0",
 	"description": "Starter template for Nuxt 3 with Tauri",
@@ -16,37 +16,34 @@
 		"preinstall": "npx only-allow pnpm",
 		"postinstall": "nuxt prepare",
 		"lint": "eslint . --fix",
-		"bump:patch": "tsx scripts/bump.ts patch && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
-		"bump:minor": "tsx scripts/bump.ts minor && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
-		"bump:major": "tsx scripts/bump.ts major && eslint package.json src-tauri/tauri.conf.json src-tauri/Cargo.toml --fix",
+		"bump": "bumpp",
 		"tauri": "tauri",
 		"tauri:dev": "tauri dev",
 		"tauri:build": "tauri build",
 		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
-		"@tauri-apps/api": ">=2.0.0-beta.13",
-		"@tauri-apps/plugin-notification": "2.0.0-beta.5",
-		"@tauri-apps/plugin-os": "2.0.0-beta.5",
-		"@tauri-apps/plugin-shell": "2.0.0-beta.6"
+		"@tauri-apps/api": ">=2.0.0-beta.14",
+		"@tauri-apps/plugin-fs": "2.0.0-beta.6",
+		"@tauri-apps/plugin-notification": "2.0.0-beta.6",
+		"@tauri-apps/plugin-os": "2.0.0-beta.6",
+		"@tauri-apps/plugin-shell": "2.0.0-beta.7"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^2.21.1",
-		"@iarna/toml": "^2.2.5",
+		"@antfu/eslint-config": "^2.21.2",
 		"@iconify-json/heroicons-solid": "^1.1.11",
 		"@nuxt/eslint": "^0.3.13",
-		"@tauri-apps/cli": ">=2.0.0-beta.20",
+		"@tauri-apps/cli": ">=2.0.0-beta.21",
 		"@unocss/eslint-plugin": "^0.61.0",
 		"@unocss/nuxt": "^0.61.0",
 		"@vueuse/core": "^10.11.0",
 		"@vueuse/nuxt": "^10.11.0",
+		"bumpp": "^9.4.1",
 		"eslint": "8.57.0",
-		"internal-ip": "^8.0.0",
-		"nuxt": "^3.12.1",
+		"nuxt": "^3.12.3",
 		"nuxt-svgo": "^4.0.1",
-		"sass": "^1.77.5",
-		"tsx": "^4.15.6",
-		"typescript": "^5.4.5",
+		"sass": "^1.77.6",
+		"typescript": "^5.5.3",
 		"unplugin-auto-import": "^0.17.6"
 	}
 }

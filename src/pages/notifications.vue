@@ -40,15 +40,15 @@
 	const permissionError = ref(false);
 
 	const createNotification = async () => {
-		let permissionGranted = await isPermissionGranted();
+		let permissionGranted = await useTauriNotificationIsPermissionGranted();
 
 		if (!permissionGranted) {
-			const permission = await requestPermission();
+			const permission = await useTauriNotificationRequestPermission();
 			permissionGranted = permission === "granted";
 		}
 
 		if (permissionGranted) {
-			sendNotification({
+			useTauriNotificationSendNotification({
 				title: notificationTitle.value,
 				body: notificationBody.value
 			});

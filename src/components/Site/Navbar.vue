@@ -21,8 +21,8 @@
 				<NavLink to="/os">
 					OS Informations
 				</NavLink>
-				<NavLink to="/foo">
-					404
+				<NavLink to="/file">
+					File
 				</NavLink>
 			</div>
 			<div hidden lg="flex flex-1 justify-end">
@@ -36,7 +36,7 @@
 
 <script lang="ts" setup>
 	const { showSidebar } = useSidebar();
-	const tauriVersion = await getTauriVersion();
+	const tauriVersion = await useTauriAppGetTauriVersion();
 </script>
 
 <style scoped>
