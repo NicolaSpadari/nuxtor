@@ -24,9 +24,9 @@
 	},
 	"dependencies": {
 		"@tauri-apps/api": ">=2.0.0-beta.14",
-		"@tauri-apps/plugin-notification": "2.0.0-beta.5",
-		"@tauri-apps/plugin-os": "2.0.0-beta.5",
-		"@tauri-apps/plugin-shell": "2.0.0-beta.6"
+		"@tauri-apps/plugin-notification": "2.0.0-beta.6",
+		"@tauri-apps/plugin-os": "2.0.0-beta.6",
+		"@tauri-apps/plugin-shell": "2.0.0-beta.7"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.21.2",
@@ -41,7 +41,7 @@
 		"bumpp": "^9.4.1",
 		"eslint": "8.57.0",
 		"internal-ip": "^8.0.0",
-		"nuxt": "^3.12.2",
+		"nuxt": "^3.12.3",
 		"nuxt-svgo": "^4.0.1",
 		"sass": "^1.77.6",
 		"tsx": "^4.16.0",
