@@ -1,7 +1,7 @@
 <template>
 	<LayoutTile
 		title="File System"
-		description="Access the file system. For this demo the only allowed permission is read/write to the Documents folder root."
+		description="Access the file system. For this demo the only allowed permission is read/write to the Documents folder (no sub directories)."
 	>
 		<form @submit.prevent="createDummyFile()">
 			<div mx-auto max-w-xl lg="mr-0 max-w-lg">
