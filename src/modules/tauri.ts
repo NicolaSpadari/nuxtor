@@ -9,12 +9,13 @@ const capitalize = (name: string) => {
 	return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
-const buildImport = (moduleName: string, moduleNamespace: Record<string, any>, prefix: string) => {
-	Object.keys(moduleNamespace).filter((name) => name !== "default").forEach((name) => {
-		const as = prefix ? prefix + capitalize(name) : name;
-		addImports({ from: `@tauri-apps/${moduleName}/${name}`, name, as });
-	});
-};
+const tauriModules = [
+	{ module: tauriApp, prefix: "App", importPath: "@tauri-apps/api/app" },
+	{ module: tauriShell, prefix: "Shell", importPath: "@tauri-apps/plugin-shell" },
+	{ module: tauriOs, prefix: "Os", importPath: "@tauri-apps/plugin-os" },
+	{ module: tauriNotification, prefix: "Notification", importPath: "@tauri-apps/plugin-notification" },
+	{ module: tauriFs, prefix: "Fs", importPath: "@tauri-apps/plugin-fs" }
+];
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {
@@ -25,10 +26,12 @@ export default defineNuxtModule<ModuleOptions>({
 		prefix: "useTauri"
 	},
 	setup(options) {
-		buildImport("api/app", tauriApp, `${options.prefix}App`);
-		buildImport("plugin-shell", tauriShell, `${options.prefix}Shell`);
-		buildImport("plugin-os", tauriOs, `${options.prefix}Os`);
-		buildImport("plugin-notification", tauriNotification, `${options.prefix}Notification`);
-		buildImport("plugin-fs", tauriFs, `${options.prefix}Fs`);
+		tauriModules.forEach(({ module, prefix, importPath }) => {
+			Object.keys(module).filter((name) => name !== "default").forEach((name) => {
+				const prefixedName = `${options.prefix}${prefix}` || "";
+				const as = prefixedName ? prefixedName + capitalize(name) : name;
+				addImports({ from: importPath, name, as });
+			});
+		});
 	}
 });
