@@ -3,8 +3,8 @@
 	"type": "module",
 	"version": "0.0.3",
 	"private": true,
-	"packageManager": "pnpm@9.4.0",
-	"description": "Starter template for Nuxt 3 with Tauri",
+	"packageManager": "pnpm@9.6.0",
+	"description": "Starter template for Nuxt 3 and Tauri 2",
 	"author": "Nicola Spadari",
 	"license": "MIT",
 	"engines": {
@@ -23,27 +23,26 @@
 		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
-		"@tauri-apps/api": ">=2.0.0-beta.14",
-		"@tauri-apps/plugin-fs": "2.0.0-beta.6",
-		"@tauri-apps/plugin-notification": "2.0.0-beta.6",
-		"@tauri-apps/plugin-os": "2.0.0-beta.6",
-		"@tauri-apps/plugin-shell": "2.0.0-beta.7"
+		"@tauri-apps/api": ">=2.0.0-rc.0",
+		"@tauri-apps/plugin-fs": "^2.0.0-rc.0",
+		"@tauri-apps/plugin-notification": "^2.0.0-rc.0",
+		"@tauri-apps/plugin-os": "^2.0.0-rc.0",
+		"@tauri-apps/plugin-shell": "^2.0.0-rc.0"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^2.21.2",
+		"@antfu/eslint-config": "^2.24.1",
 		"@iconify-json/heroicons-solid": "^1.1.11",
-		"@nuxt/eslint": "^0.3.13",
-		"@tauri-apps/cli": ">=2.0.0-beta.21",
-		"@unocss/eslint-plugin": "^0.61.0",
-		"@unocss/nuxt": "^0.61.0",
+		"@nuxt/eslint": "^0.4.0",
+		"@tauri-apps/cli": ">=2.0.0-rc.1",
+		"@unocss/eslint-plugin": "^0.61.9",
+		"@unocss/nuxt": "^0.61.9",
 		"@vueuse/core": "^10.11.0",
 		"@vueuse/nuxt": "^10.11.0",
-		"bumpp": "^9.4.1",
+		"bumpp": "^9.4.2",
 		"eslint": "8.57.0",
-		"nuxt": "^3.12.3",
-		"nuxt-svgo": "^4.0.1",
-		"sass": "^1.77.6",
-		"typescript": "^5.5.3",
-		"unplugin-auto-import": "^0.17.6"
+		"nuxt": "^3.12.4",
+		"nuxt-svgo": "^4.0.2",
+		"sass": "^1.77.8",
+		"typescript": "^5.5.4"
 	}
 }
