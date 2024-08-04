@@ -6,12 +6,12 @@
 		"main"
 	],
 	"permissions": [
-		"path:default",
-		"event:default",
-		"window:default",
-		"app:default",
-		"resources:default",
-		"menu:default",
+		"core:path:default",
+		"core:event:default",
+		"core:window:default",
+		"core:app:default",
+		"core:resources:default",
+		"core:menu:default",
 		"shell:allow-open",
 		{
 			"identifier": "shell:allow-execute",
