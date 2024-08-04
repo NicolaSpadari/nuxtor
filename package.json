@@ -31,8 +31,8 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.24.1",
-		"@iconify-json/heroicons-solid": "^1.1.11",
 		"@nuxt/eslint": "^0.4.0",
+		"@nuxt/icon": "^1.4.5",
 		"@tauri-apps/cli": ">=2.0.0-rc.1",
 		"@unocss/eslint-plugin": "^0.61.9",
 		"@unocss/nuxt": "^0.61.9",

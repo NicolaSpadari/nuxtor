@@ -8,7 +8,7 @@
 			</div>
 			<div flex lg="hidden">
 				<button type="button" @click="showSidebar = true" inline-flex items-center justify-center rounded-md p-2.5 text-neutral-300 m="-2.5">
-					<i-heroicons-solid-bars-3 size-6 />
+					<Icon name="heroicons-solid:bars-3" size-6 />
 				</button>
 			</div>
 			<div hidden lg="flex gap-x-12">

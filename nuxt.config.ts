@@ -2,6 +2,7 @@ export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
+		"@nuxt/icon",
 		"nuxt-svgo",
 		"@nuxt/eslint"
 	],
@@ -48,11 +49,6 @@ export default defineNuxtConfig({
 			watch: {
 				ignored: ["**/src-tauri/**"]
 			}
-		}
-	},
-	vue: {
-		compilerOptions: {
-			isCustomElement: (tag: string) => tag.startsWith("i-")
 		}
 	},
 	srcDir: "src/",
