@@ -12,9 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: macos-latest # for Arm based macs.
+          - platform: macos-latest # Arm based macs
             args: --target aarch64-apple-darwin
-          - platform: macos-latest # for Intel based macs.
+          - platform: macos-latest # Intel based macs
             args: --target x86_64-apple-darwin
           - platform: ubuntu-22.04
             args: ""
@@ -46,7 +46,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9.4.0
+          version: 9.6.0
 
       - name: install frontend dependencies
         run: pnpm install
@@ -57,7 +57,7 @@ jobs:
         with:
           tagName: nuxtor-v__VERSION__
           releaseName: Nuxtor v__VERSION__
-          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/nuxtor.app" once before launching
+          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/Nuxtor.app" once before launching
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}

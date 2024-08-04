@@ -24,11 +24,11 @@
 					<div flex justify-end gap-3>
 						<div v-if="done" h-full flex-center text-emerald-400 space-x-1>
 							<p>Done</p>
-							<i-heroicons-solid-check size-4 />
+							<Icon name="heroicons-solid:check" size-4 />
 						</div>
 						<div v-if="error" h-full flex-center text-red-400 space-x-1>
 							<p>Error</p>
-							<i-heroicons-solid-exclamation-triangle size-4 />
+							<Icon name="heroicons-solid:exclamation-triangle" size-4 />
 						</div>
 						<Btn type="submit" :disabled="fileName === ''">
 							Create file

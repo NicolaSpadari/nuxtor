@@ -2,6 +2,7 @@ export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
+		"@nuxt/icon",
 		"nuxt-svgo",
 		"@nuxt/eslint"
 	],
@@ -50,11 +51,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	vue: {
-		compilerOptions: {
-			isCustomElement: (tag: string) => tag.startsWith("i-")
-		}
-	},
 	srcDir: "src/",
 	ssr: false,
 	devServer: {
@@ -64,5 +60,6 @@ export default defineNuxtConfig({
 		config: {
 			standalone: false
 		}
-	}
+	},
+	compatibilityDate: "2024-08-01"
 });

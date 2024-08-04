@@ -1,7 +1,6 @@
 import {
 	defineConfig,
 	presetAttributify,
-	presetIcons,
 	presetTagify,
 	presetTypography,
 	presetUno,
@@ -21,12 +20,6 @@ export default defineConfig({
 		presetUno(),
 		presetTagify(),
 		presetAttributify(),
-		presetIcons({
-			extraProperties: {
-				display: "inline-block",
-				"vertical-align": "middle"
-			}
-		}),
 		presetTypography(),
 		presetWebFonts({
 			fonts: {

@@ -14,7 +14,7 @@
 					</NuxtLink>
 					-
 					<NuxtLink :to="tauriSite" target="_blank" text-accent underline>
-						Tauri
+						Tauri 2
 					</NuxtLink>
 					-
 					<NuxtLink :to="unoSite" target="_blank" text-accent underline>

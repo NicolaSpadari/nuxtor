@@ -1,6 +1,6 @@
-const showSidebar = ref(false);
-
 export const useSidebar = () => {
+	const showSidebar = useState("sidebar", () => false);
+
 	return {
 		showSidebar
 	};

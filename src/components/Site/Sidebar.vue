@@ -11,7 +11,7 @@
 							<SvgoLogo :filled="true" :font-controlled="false" size-8 />
 						</NuxtLink>
 						<button type="button" rounded-md p-2.5 text-neutral-300 m="2.5" @click="showSidebar = false">
-							<i-heroicons-solid-x-mark size-6 />
+							<Icon name="heroicons-solid:x-mark" size-6 />
 						</button>
 					</div>
 					<div mt-6 flow-root>
