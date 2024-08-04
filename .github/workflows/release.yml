@@ -57,7 +57,7 @@ jobs:
         with:
           tagName: nuxtor-v__VERSION__
           releaseName: Nuxtor v__VERSION__
-          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/nuxtor.app" once before launching
+          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/Nuxtor.app" once before launching
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
