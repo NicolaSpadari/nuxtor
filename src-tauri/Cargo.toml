@@ -28,7 +28,7 @@ serde_json = "1"
 
 [dependencies.tauri]
 version = "2.0.2"
-features = [ ]
+features = [ "tray-icon" ]
 
 [dependencies.serde]
 version = "1"
