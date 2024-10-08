@@ -8,8 +8,6 @@ A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTa
 Build super fast desktop applications!
 </p>
 
->**⚠️ `nuxtor` is still a WIP**
-
 <br />
 
 <p float="left">
@@ -46,8 +44,8 @@ Build super fast desktop applications!
 ## Setup
 
   - Before running this app, you need to configure your environment with Rust. Take a look at the [Tauri docs](https://v2.tauri.app/start/prerequisites).
-  - This project enforces [pnpm](https://pnpm.io). In order to use another package manager you need to update `package.json` and `tauri.config.js`
-  - The frontend runs on the usual port `3000` of Nuxt, the Tauri server uses the port `3001`. This settings are customizable in the `nuxt.config.ts` and `tauri.config.js`.
+  - This project enforces [pnpm](https://pnpm.io). In order to use another package manager you need to update `package.json` and `tauri.conf.json`
+  - The frontend runs on the usual port `3000` of Nuxt, the Tauri server uses the port `3001`. This settings are customizable in the `nuxt.config.ts` and `tauri.conf.json`.
   - Once ready, follow these commands:
 
   ```sh
@@ -84,10 +82,9 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 
 ## Notes
 
-- Tauri v2 is still in beta. Some things might not work, or present some bugs.
 - Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
 - Tauri js functions are auto imported as-is with the help of a custom module. If another Tauri plugin is added, then the module has to be updated to support auto imports under `src/modules/tauri.ts`
-- As per documentation, the Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies are still there.
+- As per documentation, Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
 
 ## License
 
