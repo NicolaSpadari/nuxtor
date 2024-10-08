@@ -1,7 +1,5 @@
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 
-#[allow(unused)]
-
 use tauri::{
 	menu::{Menu, MenuItem},
 	tray::TrayIconBuilder
@@ -13,7 +11,7 @@ pub fn run() {
 			let quit_i = MenuItem::with_id(app, "quit", "Quit", true, None::<&str>)?;
 			let menu = Menu::with_items(app, &[&quit_i])?;
 
-			let tray = TrayIconBuilder::new()
+			let _tray = TrayIconBuilder::new()
 				.menu(&menu)
 				.menu_on_left_click(true)
 				.icon(app.default_window_icon().unwrap().clone())
