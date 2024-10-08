@@ -34,13 +34,17 @@
 	const result = ref("");
 
 	const sendCommand = async () => {
-		const response = await useTauriShellCommand.create("exec-sh", [
-			"-c",
-			input.value
-		]).execute();
+		try{
+			const response = await useTauriShellCommand.create("exec-sh", [
+				"-c",
+				input.value
+			]).execute();
 
-		result.value = JSON.stringify(response, null, 4);
-
-		input.value = "";
+			result.value = JSON.stringify(response, null, 4);
+		}catch(error){
+			result.value = JSON.stringify(error, null, 4);
+		}finally{
+			input.value = "";
+		}
 	};
 </script>
