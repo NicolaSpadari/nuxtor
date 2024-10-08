@@ -1,7 +1,7 @@
 import { defineConfig } from "bumpp";
 
 export default defineConfig({
-	release: "patch",
+	release: "prompt",
 	commit: false,
 	tag: false,
 	push: false,

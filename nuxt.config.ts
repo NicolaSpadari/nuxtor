@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"@nuxt/icon",
+		"@nuxt/fonts",
 		"nuxt-svgo",
 		"@nuxt/eslint"
 	],
@@ -30,11 +31,19 @@ export default defineNuxtConfig({
 	experimental: {
 		typedPages: true
 	},
+	fonts: {
+		defaults: {
+			weights: [`${100}..${900}`]
+		}
+	},
 	css: [
 		"@unocss/reset/tailwind.css"
 	],
 	svgo: {
 		autoImportPath: "@/assets/"
+	},
+	icon: {
+		mode: "svg"
 	},
 	vite: {
 		clearScreen: false,
@@ -61,5 +70,5 @@ export default defineNuxtConfig({
 			standalone: false
 		}
 	},
-	compatibilityDate: "2024-08-01"
+	compatibilityDate: "2024-10-01"
 });

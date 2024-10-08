@@ -4,7 +4,6 @@ import {
 	presetTagify,
 	presetTypography,
 	presetUno,
-	presetWebFonts,
 	transformerDirectives,
 	transformerVariantGroup
 } from "unocss";
@@ -20,18 +19,13 @@ export default defineConfig({
 		presetUno(),
 		presetTagify(),
 		presetAttributify(),
-		presetTypography(),
-		presetWebFonts({
-			fonts: {
-				heading: {
-					name: "Montserrat",
-					weights: ["200", "400", "700"]
-				},
-				text: "Inter"
-			}
-		})
+		presetTypography()
 	],
 	theme: {
+		fontFamily: {
+			heading: "Montserrat",
+			text: "Inter"
+		},
 		breakpoints: {
 			sm: "576px",
 			md: "768px",

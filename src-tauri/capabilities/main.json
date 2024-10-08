@@ -12,6 +12,7 @@
 		"core:app:default",
 		"core:resources:default",
 		"core:menu:default",
+		"core:tray:default",
 		"shell:allow-open",
 		{
 			"identifier": "shell:allow-execute",
