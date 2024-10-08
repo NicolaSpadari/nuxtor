@@ -23,6 +23,7 @@
 		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
+		"@nuxt/fonts": "^0.10.0",
 		"@tauri-apps/api": ">=2.0.2",
 		"@tauri-apps/plugin-fs": "^2.0.0",
 		"@tauri-apps/plugin-notification": "^2.0.0",
