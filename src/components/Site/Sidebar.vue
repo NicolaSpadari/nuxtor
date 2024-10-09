@@ -5,7 +5,7 @@
 	>
 		<div v-if="showSidebar" relative z-20 lg="hidden" role="dialog" aria-modal="true">
 			<div fixed inset-0 overflow-hidden>
-				<div crate h-full flex flex-col overflow-y-auto bg="neutral-800/70" py-6 backdrop-blur-md>
+				<div bg="neutral-800/70" h-full flex flex-col overflow-y-auto py-6 backdrop-blur-md crate>
 					<div flex items-center justify-between>
 						<NuxtLink to="/" p-1.5 m="-1.5">
 							<SvgoLogo :filled="true" :font-controlled="false" size-8 />

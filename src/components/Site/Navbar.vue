@@ -7,7 +7,7 @@
 				</NuxtLink>
 			</div>
 			<div flex lg="hidden">
-				<button type="button" @click="showSidebar = true" inline-flex items-center justify-center rounded-md p-2.5 text-neutral-300 m="-2.5">
+				<button type="button" inline-flex items-center justify-center rounded-md p-2.5 text-neutral-300 m="-2.5" @click="showSidebar = true">
 					<Icon name="heroicons-solid:bars-3" size-6 />
 				</button>
 			</div>

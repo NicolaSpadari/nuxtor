@@ -1,9 +1,9 @@
-import { addImports, defineNuxtModule } from "nuxt/kit";
 import * as tauriApp from "@tauri-apps/api/app";
-import * as tauriShell from "@tauri-apps/plugin-shell";
-import * as tauriOs from "@tauri-apps/plugin-os";
-import * as tauriNotification from "@tauri-apps/plugin-notification";
 import * as tauriFs from "@tauri-apps/plugin-fs";
+import * as tauriNotification from "@tauri-apps/plugin-notification";
+import * as tauriOs from "@tauri-apps/plugin-os";
+import * as tauriShell from "@tauri-apps/plugin-shell";
+import { addImports, defineNuxtModule } from "nuxt/kit";
 
 const capitalize = (name: string) => {
 	return name.charAt(0).toUpperCase() + name.slice(1);

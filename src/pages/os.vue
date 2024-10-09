@@ -3,7 +3,7 @@
 		title="OS Information"
 		description="Read information about the operating system using the OS Information plugin."
 	>
-		<div overflow-hidden bg-neutral-800 shadow rounded-lg>
+		<div overflow-hidden rounded-lg bg-neutral-800 shadow>
 			<dl divide-y divide-neutral-600>
 				<TabRow heading="Platform" :body="`${currentPlatform} ${currentVersion}`" />
 				<TabRow heading="Arch" :body="currentArch" />

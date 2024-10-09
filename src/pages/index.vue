@@ -29,8 +29,10 @@
 			</div>
 		</div>
 
-		<div fixed text-sm bottom-6 absolute-center-h>
-			<p text-sm text-neutral-500>Made by {{ author }}</p>
+		<div fixed bottom-6 text-sm absolute-center-h>
+			<p text-sm text-neutral-500>
+				Made by {{ author }}
+			</p>
 		</div>
 	</div>
 </template>
