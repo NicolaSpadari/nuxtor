@@ -3,6 +3,7 @@ import * as tauriFs from "@tauri-apps/plugin-fs";
 import * as tauriNotification from "@tauri-apps/plugin-notification";
 import * as tauriOs from "@tauri-apps/plugin-os";
 import * as tauriShell from "@tauri-apps/plugin-shell";
+import * as tauriStore from "@tauri-apps/plugin-store";
 import { addImports, defineNuxtModule } from "nuxt/kit";
 
 const capitalize = (name: string) => {
@@ -14,7 +15,8 @@ const tauriModules = [
 	{ module: tauriShell, prefix: "Shell", importPath: "@tauri-apps/plugin-shell" },
 	{ module: tauriOs, prefix: "Os", importPath: "@tauri-apps/plugin-os" },
 	{ module: tauriNotification, prefix: "Notification", importPath: "@tauri-apps/plugin-notification" },
-	{ module: tauriFs, prefix: "Fs", importPath: "@tauri-apps/plugin-fs" }
+	{ module: tauriFs, prefix: "Fs", importPath: "@tauri-apps/plugin-fs" },
+	{ module: tauriStore, prefix: "Store", importPath: "@tauri-apps/plugin-store" },
 ];
 
 export default defineNuxtModule<ModuleOptions>({

@@ -5,8 +5,7 @@ export default defineNuxtConfig({
 		"@nuxt/icon",
 		"@nuxt/fonts",
 		"nuxt-svgo",
-		"@nuxt/eslint",
-		"shadcn-nuxt"
+		"@nuxt/eslint"
 	],
 	app: {
 		head: {
@@ -31,9 +30,6 @@ export default defineNuxtConfig({
 	},
 	experimental: {
 		typedPages: true
-	},
-	shadcn: {
-		prefix: "ui"
 	},
 	fonts: {
 		defaults: {

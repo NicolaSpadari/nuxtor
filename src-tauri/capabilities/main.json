@@ -37,6 +37,7 @@
 		"os:allow-version",
 		"os:allow-locale",
 		"fs:allow-document-read",
-		"fs:allow-document-write"
+		"fs:allow-document-write",
+		"store:default"
 	]
 }
