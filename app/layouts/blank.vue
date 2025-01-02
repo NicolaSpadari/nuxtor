@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<SiteNavbar sticky />
+		<SiteNavbar class="sticky" />
 		<SiteSidebar />
 
 		<slot />
