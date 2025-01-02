@@ -16,13 +16,13 @@ const tauriModules = [
 	{ module: tauriOs, prefix: "Os", importPath: "@tauri-apps/plugin-os" },
 	{ module: tauriNotification, prefix: "Notification", importPath: "@tauri-apps/plugin-notification" },
 	{ module: tauriFs, prefix: "Fs", importPath: "@tauri-apps/plugin-fs" },
-	{ module: tauriStore, prefix: "Store", importPath: "@tauri-apps/plugin-store" },
+	{ module: tauriStore, prefix: "Store", importPath: "@tauri-apps/plugin-store" }
 ];
 
 export default defineNuxtModule<ModuleOptions>({
 	meta: {
 		name: "nuxt-tauri",
-		configKey: "nuxt-tauri"
+		configKey: "tauri"
 	},
 	defaults: {
 		prefix: "useTauri"

@@ -45,6 +45,9 @@ export default defineNuxtConfig({
 	icon: {
 		mode: "svg"
 	},
+	dir: {
+		modules: "app/modules"
+	},
 	vite: {
 		clearScreen: false,
 		envPrefix: ["VITE_", "TAURI_"],
