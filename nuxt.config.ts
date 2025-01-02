@@ -25,23 +25,21 @@ export default defineNuxtConfig({
 			mode: "out-in"
 		}
 	},
-	experimental: {
-		typedPages: true
-	},
+	css: [
+		"@unocss/reset/tailwind.css"
+	],
 	fonts: {
 		defaults: {
 			weights: [`${100}..${900}`]
 		}
 	},
-	css: [
-		"@unocss/reset/tailwind.css"
-	],
-	svgo: {
-		autoImportPath: "@/assets/"
-	},
 	icon: {
 		mode: "svg"
 	},
+	svgo: {
+		autoImportPath: "@/assets/"
+	},
+	ssr: false,
 	dir: {
 		modules: "app/modules"
 	},
@@ -60,7 +58,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	ssr: false,
 	devServer: {
 		host: "0.0.0.0"
 	},
@@ -68,6 +65,9 @@ export default defineNuxtConfig({
 		config: {
 			standalone: false
 		}
+	},
+	experimental: {
+		typedPages: true
 	},
 	future: {
 		compatibilityVersion: 4
