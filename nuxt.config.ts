@@ -60,7 +60,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	srcDir: "src/",
 	ssr: false,
 	devServer: {
 		host: "0.0.0.0"
@@ -69,6 +68,9 @@ export default defineNuxtConfig({
 		config: {
 			standalone: false
 		}
+	},
+	future: {
+		compatibilityVersion: 4
 	},
 	compatibilityDate: "2025-01-01"
 });
