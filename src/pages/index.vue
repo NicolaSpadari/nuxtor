@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-	const { name, author, repo, tauriSite, nuxtSite, unoSite } = useConstants();
+	const { name, author, repo, tauriSite, nuxtSite, unoSite } = useAppConfig();
 
 	definePageMeta({
 		layout: "home"
