@@ -1,6 +1,6 @@
 <template>
-	<Html min-h-screen>
-		<Body overflow-x-hidden bg-dark-800 text-white>
+	<Html class="scroll-smooth min-h-screen">
+		<Body class="font-text antialiased overflow-x-hidden bg-dark-800 text-white">
 			<NuxtLayout>
 				<NuxtPage />
 			</NuxtLayout>
@@ -11,7 +11,6 @@
 <style lang="scss">
 	html {
 		-webkit-tap-highlight-color: transparent;
-		scroll-behavior: smooth;
 	}
 	img {
 		-webkit-user-drag: none;

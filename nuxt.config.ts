@@ -15,9 +15,6 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: "format-detection", content: "no" }
 			],
-			bodyAttrs: {
-				class: "font-text antialiased"
-			}
 		},
 		pageTransition: {
 			name: "page",
