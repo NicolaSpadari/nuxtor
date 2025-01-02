@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="150" src="./src/public/logo.png" alt="logo">
+    <img width="150" src="./public/logo.png" alt="logo">
 </p>
 <h1 align="center">NUXTOR</h1>
 <p align="center">
@@ -18,7 +18,7 @@ Build super fast desktop applications!
 <br />
 
 <div align="center">
-<img src="./src/public/screenshot.png">
+<img src="./public/screenshot.png">
 </div>
 
 <p align="center">Powered by Nuxt 3</p>
@@ -27,7 +27,7 @@ Build super fast desktop applications!
 
 ## Technologies run-down
 
-- Nuxt 3
+- Nuxt 3 (v4 ready!)
 - Tauri 2
 - UnoCSS
 - Typescript
@@ -37,8 +37,9 @@ Build super fast desktop applications!
 ## Functionalities
 
 - Run shell commands from the app
-- Send custom notifications to the client (remember to turn on/grant notifications in your computer settings!)
+- Send custom notifications to the client (remember to turn on/grant notifications in your computer settings)
 - Display OS related informations
+- Store and retrieve data locally
 - Show tray icon
 - Support all Nuxt functionalities (routing/layout/middleware/modules/etc...)
 
@@ -84,7 +85,7 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 ## Notes
 
 - Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
-- Tauri js functions are auto imported as-is with the help of a custom module. If another Tauri plugin is added, then the module has to be updated to support auto imports under `src/modules/tauri.ts`
+- Tauri js functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `src/modules/tauri.ts`
 - As per documentation, Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
 
 ## License

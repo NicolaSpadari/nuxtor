@@ -15,9 +15,6 @@ export default defineNuxtConfig({
 			meta: [
 				{ name: "format-detection", content: "no" }
 			],
-			bodyAttrs: {
-				class: "font-text antialiased"
-			}
 		},
 		pageTransition: {
 			name: "page",
@@ -28,22 +25,23 @@ export default defineNuxtConfig({
 			mode: "out-in"
 		}
 	},
-	experimental: {
-		typedPages: true
-	},
+	css: [
+		"@unocss/reset/tailwind.css"
+	],
 	fonts: {
 		defaults: {
 			weights: [`${100}..${900}`]
 		}
 	},
-	css: [
-		"@unocss/reset/tailwind.css"
-	],
+	icon: {
+		mode: "svg"
+	},
 	svgo: {
 		autoImportPath: "@/assets/"
 	},
-	icon: {
-		mode: "svg"
+	ssr: false,
+	dir: {
+		modules: "app/modules"
 	},
 	vite: {
 		clearScreen: false,
@@ -60,8 +58,6 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	srcDir: "src/",
-	ssr: false,
 	devServer: {
 		host: "0.0.0.0"
 	},
@@ -70,5 +66,11 @@ export default defineNuxtConfig({
 			standalone: false
 		}
 	},
-	compatibilityDate: "2024-10-01"
+	experimental: {
+		typedPages: true
+	},
+	future: {
+		compatibilityVersion: 4
+	},
+	compatibilityDate: "2025-01-01"
 });
