@@ -5,12 +5,12 @@
 	>
 		<div v-if="showSidebar" class="relative z-20" lg="hidden" role="dialog" aria-modal="true">
 			<div class="fixed inset-0 overflow-hidden">
-				<div crate class="bg-neutral-800/70 h-full flex flex-col overflow-y-auto py-6 backdrop-blur-md">
+				<div crate class="h-full flex flex-col overflow-y-auto bg-neutral-800/70 py-6 backdrop-blur-md">
 					<div class="flex items-center justify-between">
 						<NuxtLink to="/" class="p-1.5 -m-1.5">
 							<SvgoLogo :filled="true" :font-controlled="false" class="size-8" />
 						</NuxtLink>
-						<button type="button" class="rounded-md p-2.5 text-neutral-300 m-2.5" @click="showSidebar = false">
+						<button type="button" class="m-2.5 rounded-md p-2.5 text-neutral-300" @click="showSidebar = false">
 							<Icon name="heroicons-solid:x-mark" class="size-6" />
 						</button>
 					</div>

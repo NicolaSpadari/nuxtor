@@ -1,6 +1,6 @@
 <template>
-	<Html class="scroll-smooth min-h-screen">
-		<Body class="font-text antialiased overflow-x-hidden bg-dark-800 text-white">
+	<Html class="min-h-screen scroll-smooth">
+		<Body class="overflow-x-hidden bg-dark-800 text-white font-text antialiased">
 			<NuxtLayout>
 				<NuxtPage />
 			</NuxtLayout>
