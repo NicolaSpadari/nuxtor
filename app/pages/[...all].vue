@@ -1,5 +1,5 @@
 <template>
-	<div clas="grid place-items-center px-6 py-24" sm="py-32" lg="px-8">
+	<div class="grid place-items-center px-6 py-24" sm="py-32" lg="px-8">
 		<div class="text-center">
 			<p class="text-base text-emerald-500 font-semibold">
 				404
