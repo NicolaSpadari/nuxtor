@@ -11,23 +11,9 @@
 					<Icon name="heroicons-solid:bars-3" class="size-6" />
 				</button>
 			</div>
-			<div class="hidden" lg="flex gap-x-12">
-				<NavLink to="/commands">
-					Commands
-				</NavLink>
-				<NavLink to="/notifications">
-					Notifications
-				</NavLink>
-				<NavLink to="/os">
-					OS Informations
-				</NavLink>
-				<NavLink to="/file">
-					File
-				</NavLink>
-				<NavLink to="/store">
-					Store
-				</NavLink>
-			</div>
+
+			<UNavigationMenu :items="items" class="w-full justify-center" />
+			
 			<div class="hidden" lg="flex flex-1 justify-end">
 				<p class="text-sm text-white font-semibold leading-6">
 					v{{ tauriVersion }}
@@ -40,10 +26,32 @@
 <script lang="ts" setup>
 	const { showSidebar } = useSidebar();
 	const tauriVersion = await useTauriAppGetTauriVersion();
-</script>
 
-<style scoped>
-	.router-link-exact-active:not(.home){
-		@apply text-emerald-500;
-	}
-</style>
+	const items = ref([
+		{
+			label: "Commands",
+			to: "/commands",
+			icon: "lucide:square-terminal"
+		},
+		{
+			label: "Notifications",
+			to: "/notifications",
+			icon: "lucide:message-square-more"
+		},
+		{
+			label: "OS Informations",
+			to: "/os",
+			icon: "lucide:info"
+		},
+		{
+			label: "Files",
+			to: "/notifications",
+			icon: "lucide:file"
+		},
+		{
+			label: "Store",
+			to: "/store",
+			icon: "lucide:database"
+		},
+	]);
+</script>

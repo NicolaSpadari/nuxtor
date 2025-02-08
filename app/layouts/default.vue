@@ -3,8 +3,8 @@
 		<SiteNavbar class="sticky" />
 		<SiteSidebar />
 
-		<div crate>
+		<UContainer>
 			<slot />
-		</div>
+		</UContainer>
 	</div>
 </template>

@@ -1,10 +1,9 @@
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
-		"@unocss/nuxt",
-		"@nuxt/icon",
-		"@nuxt/fonts",
+		"@nuxt/ui",
 		"nuxt-svgo",
+		"reka-ui/nuxt",
 		"@nuxt/eslint"
 	],
 	app: {
@@ -26,16 +25,8 @@ export default defineNuxtConfig({
 		}
 	},
 	css: [
-		"@unocss/reset/tailwind.css"
+		"@/assets/css/main.css"
 	],
-	fonts: {
-		defaults: {
-			weights: [`${100}..${900}`]
-		}
-	},
-	icon: {
-		mode: "svg"
-	},
 	svgo: {
 		autoImportPath: "@/assets/"
 	},
@@ -72,5 +63,5 @@ export default defineNuxtConfig({
 	future: {
 		compatibilityVersion: 4
 	},
-	compatibilityDate: "2025-01-01"
+	compatibilityDate: "2025-02-01"
 });

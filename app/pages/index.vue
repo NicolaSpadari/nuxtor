@@ -5,24 +5,24 @@
 
 			<div class="text-center">
 				<h1 class="animate-pulse text-4xl text-light-300 font-bold tracking-wider font-heading" sm="text-6xl">
-					{{ name.toUpperCase() }}
+					{{ app.name.toUpperCase() }}
 				</h1>
 				<p class="mt-5 flex gap-1 text-neutral-300 leading-8">
 					Powered by
-					<NuxtLink :to="nuxtSite" target="_blank" class="text-accent underline">
+					<NuxtLink :to="app.nuxtSite" target="_blank" class="text-accent underline">
 						Nuxt 3
 					</NuxtLink>
 					-
-					<NuxtLink :to="tauriSite" target="_blank" class="text-accent underline">
+					<NuxtLink :to="app.tauriSite" target="_blank" class="text-accent underline">
 						Tauri 2
 					</NuxtLink>
 					-
-					<NuxtLink :to="unoSite" target="_blank" class="text-accent underline">
-						UnoCSS
+					<NuxtLink :to="app.NuxtUiSite" target="_blank" class="text-accent underline">
+						NuxtUI 3
 					</NuxtLink>
 				</p>
 				<div class="mt-15">
-					<Hyperlink :to="repo">
+					<Hyperlink :to="app.repo">
 						Star on GitHub
 					</Hyperlink>
 				</div>
@@ -31,14 +31,14 @@
 
 		<div class="fixed bottom-6 text-sm absolute-center-h">
 			<p class="text-sm text-neutral-500">
-				Made by {{ author }}
+				Made by {{ app.author }}
 			</p>
 		</div>
 	</div>
 </template>
 
 <script lang="ts" setup>
-	const { name, author, repo, tauriSite, nuxtSite, unoSite } = useAppConfig();
+	const { app } = useAppConfig();
 
 	definePageMeta({
 		layout: "home"

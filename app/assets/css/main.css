@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+	--font-Heading: "Montserrat", sans-serif;
+	--font-sans: "Inter", sans-serif;
+
+	--color-primary: var(--ui-color-primary-500);
+	--color-secondary: var(--ui-color-secondary-500);
+	--color-success: var(--ui-color-success-500);
+	--color-info: var(--ui-color-info-500);
+	--color-warning: var(--ui-color-warning-500);
+	--color-error: var(--ui-color-error-500)
+}
+
+@layer base {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@layer utilities {
+	.flex-center {
+		@apply flex justify-center items-center;
+	}
+	.absolute-center-h: {
+		@apply left-1/2 transform -translate-x-1/2;
+	}
+	.absolute-center-v{
+		@apply top-1/2 transform -translate-y-1/2;
+	}
+}
+
+.page-enter-active,
+.page-leave-active {
+	@apply transition-opacity ease-in-out duration-300;
+}
+.layout-enter-active,
+.layout-leave-active {
+	@apply transition-opacity ease-in-out duration-500;
+}
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to {
+	@apply opacity-0;
+}

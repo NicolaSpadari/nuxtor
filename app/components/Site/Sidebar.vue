@@ -47,9 +47,3 @@
 	const tauriVersion = await useTauriAppGetTauriVersion();
 	const { showSidebar } = useSidebar();
 </script>
-
-<style scoped>
-	.router-link-exact-active:not(.home){
-		@apply text-emerald-500;
-	}
-</style>
