@@ -14,6 +14,11 @@
 </template>
 
 <script lang="ts" setup>
+	definePageMeta({
+		name: "OS Informations",
+		icon: "lucide:info"
+	});
+
 	const currentPlatform = await useTauriOsPlatform();
 	const currentArch = await useTauriOsArch();
 	const currentVersion = await useTauriOsVersion();

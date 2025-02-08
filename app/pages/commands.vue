@@ -30,6 +30,11 @@
 </template>
 
 <script lang="ts" setup>
+	definePageMeta({
+		name: "Commands",
+		icon: "lucide:square-terminal"
+	});
+	
 	const input = ref("");
 	const result = ref("");
 

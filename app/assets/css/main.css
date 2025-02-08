@@ -2,7 +2,7 @@
 @import "@nuxt/ui";
 
 @theme {
-	--font-Heading: "Montserrat", sans-serif;
+	--font-heading: "Montserrat", sans-serif;
 	--font-sans: "Inter", sans-serif;
 
 	--color-primary: var(--ui-color-primary-500);
@@ -21,10 +21,10 @@
 	.flex-center {
 		@apply flex justify-center items-center;
 	}
-	.absolute-center-h: {
+	.absolute-center-h {
 		@apply left-1/2 transform -translate-x-1/2;
 	}
-	.absolute-center-v{
+	.absolute-center-v {
 		@apply top-1/2 transform -translate-y-1/2;
 	}
 }

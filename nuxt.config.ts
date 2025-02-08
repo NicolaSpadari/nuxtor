@@ -27,6 +27,14 @@ export default defineNuxtConfig({
 	css: [
 		"@/assets/css/main.css"
 	],
+	icon: {
+		customCollections: [
+			{
+				prefix: "local",
+				dir: "./app/assets/icons"
+			}
+		]
+	},
 	svgo: {
 		autoImportPath: "@/assets/"
 	},

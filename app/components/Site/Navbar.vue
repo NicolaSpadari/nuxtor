@@ -1,57 +1,70 @@
 <template>
 	<header class="top-0 z-10">
-		<nav crate class="flex items-center justify-between py-6">
-			<div class="flex" lg="flex-1">
-				<NuxtLink to="/" class="home p-1.5 -m-1.5">
-					<SvgoLogo :font-controlled="false" class="size-8" />
-				</NuxtLink>
-			</div>
-			<div class="flex" lg="hidden">
-				<button type="button" class="inline-flex items-center justify-center rounded-md p-2.5 text-neutral-300 -m-2.5" @click="showSidebar = true">
-					<Icon name="heroicons-solid:bars-3" class="size-6" />
-				</button>
-			</div>
-
-			<UNavigationMenu :items="items" class="w-full justify-center" />
-			
-			<div class="hidden" lg="flex flex-1 justify-end">
-				<p class="text-sm text-white font-semibold leading-6">
-					v{{ tauriVersion }}
-				</p>
-			</div>
-		</nav>
+		<UContainer class="md:py-6">
+			<UNavigationMenu
+				:items="mobileItems"
+				variant="link"
+				:ui="{
+					root: 'md:hidden'
+				}"
+			/>
+			<UNavigationMenu
+				:items="desktopItems"
+				variant="link"
+				:ui="{
+					root: 'hidden md:flex'
+				}"
+			/>
+		</UContainer>
 	</header>
 </template>
 
 <script lang="ts" setup>
+	const { pages } = usePages();
 	const { showSidebar } = useSidebar();
 	const tauriVersion = await useTauriAppGetTauriVersion();
 
-	const items = ref([
-		{
-			label: "Commands",
-			to: "/commands",
-			icon: "lucide:square-terminal"
-		},
-		{
-			label: "Notifications",
-			to: "/notifications",
-			icon: "lucide:message-square-more"
-		},
-		{
-			label: "OS Informations",
-			to: "/os",
-			icon: "lucide:info"
-		},
-		{
-			label: "Files",
-			to: "/notifications",
-			icon: "lucide:file"
-		},
-		{
-			label: "Store",
-			to: "/store",
-			icon: "lucide:database"
-		},
+	const mobileItems = ref<any[]>([
+		[
+			{
+				avatar: {
+					icon: "local:logo",
+					size: "xl",
+					ui: {
+						root: "bg-transparent"
+					}
+				},
+				to: "/"
+			}
+		],
+		[
+			{
+				icon: "lucide:menu",
+				onSelect: () => showSidebar.value = true
+			}
+		]
+	]);
+
+	const desktopItems = ref<any[]>([
+		[
+			{
+				avatar: {
+					icon: "local:logo",
+					size: "3xl",
+					ui: {
+						root: "group bg-transparent",
+						icon: "opacity-70 group-hover:opacity-100"
+					}
+				},
+				to: "/"
+			}
+		],
+		pages,
+		[
+			{
+				label: `v${tauriVersion}`,
+				disabled: true
+			}
+		]
 	]);
 </script>

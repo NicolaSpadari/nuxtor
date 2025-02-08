@@ -30,6 +30,11 @@
 </template>
 
 <script lang="ts" setup>
+	definePageMeta({
+		name: "Store",
+		icon: "lucide:database"
+	});
+
 	const input = ref("");
 	const result = ref("");
 	const autosave = ref(false);

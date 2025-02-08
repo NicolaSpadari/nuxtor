@@ -9,11 +9,24 @@ export default defineAppConfig({
 	},
 	ui: {
 		colors: {
+			primary: "green",
 			neutral: "zinc"
 		},
 		button: {
 			slots: {
 				base: "cursor-pointer"
+			}
+		},
+		navigationMenu: {
+			slots: {
+				link: "cursor-pointer",
+			},
+			variants: {
+				disabled: {
+					true: {
+						link: "cursor-text"
+					}
+				}
 			}
 		}
 	}

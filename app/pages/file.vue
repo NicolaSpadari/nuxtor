@@ -41,6 +41,11 @@
 </template>
 
 <script lang="ts" setup>
+	definePageMeta({
+		name: "Files",
+		icon: "lucide:file"
+	});
+
 	const fileName = ref("");
 	const fileContent = ref("");
 	const done = ref(false);

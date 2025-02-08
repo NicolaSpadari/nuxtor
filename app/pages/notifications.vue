@@ -35,6 +35,11 @@
 </template>
 
 <script lang="ts" setup>
+	definePageMeta({
+		name: "Notifications",
+		icon: "lucide:message-square-more"
+	});
+
 	const notificationTitle = ref("");
 	const notificationBody = ref("");
 	const permissionError = ref(false);
