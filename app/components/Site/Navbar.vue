@@ -1,6 +1,6 @@
 <template>
 	<header class="top-0 z-10">
-		<UContainer class="md:py-6">
+		<UContainer class="md:py-2">
 			<UNavigationMenu
 				:items="mobileItems"
 				variant="link"
