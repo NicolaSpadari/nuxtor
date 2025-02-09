@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "Files",
-		icon: "lucide:file"
+		icon: "lucide:file-text"
 	});
 
 	const schema = z.object({
