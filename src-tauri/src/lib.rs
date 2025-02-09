@@ -13,7 +13,7 @@ pub fn run() {
 
 			let _tray = TrayIconBuilder::new()
 				.menu(&menu)
-				.menu_on_left_click(true)
+				.show_menu_on_left_click(true)
 				.icon(app.default_window_icon().unwrap().clone())
 				.on_menu_event(|app, event| match event.id.as_ref() {
 					"quit" => {

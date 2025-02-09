@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<SiteNavbar class="sticky" />
+		<SiteNavbar class="sticky bg-(--ui-bg)/75 backdrop-blur" />
 		<SiteSidebar />
 
-		<div crate>
+		<UContainer>
 			<slot />
-		</div>
+		</UContainer>
 	</div>
 </template>

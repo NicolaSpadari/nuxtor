@@ -3,19 +3,31 @@
 		title="OS Information"
 		description="Read information about the operating system using the OS Information plugin."
 	>
-		<div class="overflow-hidden rounded-lg bg-neutral-800 shadow">
-			<dl class="divide-y divide-neutral-600">
-				<TabRow heading="Platform" :body="`${currentPlatform} ${currentVersion}`" />
-				<TabRow heading="Arch" :body="currentArch" />
-				<TabRow heading="Locale" :body="currentLocale" />
-			</dl>
-		</div>
+		<UAccordion :items="items" type="multiple" />
 	</LayoutTile>
 </template>
 
 <script lang="ts" setup>
-	const currentPlatform = await useTauriOsPlatform();
-	const currentArch = await useTauriOsArch();
-	const currentVersion = await useTauriOsVersion();
-	const currentLocale = await useTauriOsLocale() || "Not detectable";
+	definePageMeta({
+		name: "OS Informations",
+		icon: "lucide:info"
+	});
+
+	const items = ref([
+		{
+			label: "System",
+			icon: "lucide:monitor",
+			content: `${useTauriOsPlatform()} ${useTauriOsVersion()}`
+		},
+		{
+			label: "Arch",
+			icon: "lucide:microchip",
+			content: useTauriOsArch()
+		},
+		{
+			label: "Locale",
+			icon: "lucide:globe",
+			content: await useTauriOsLocale() || "Not detectable"
+		}
+	]);
 </script>

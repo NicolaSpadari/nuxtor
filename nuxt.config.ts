@@ -1,10 +1,9 @@
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
-		"@unocss/nuxt",
-		"@nuxt/icon",
-		"@nuxt/fonts",
+		"@nuxt/ui",
 		"nuxt-svgo",
+		"reka-ui/nuxt",
 		"@nuxt/eslint"
 	],
 	app: {
@@ -26,15 +25,15 @@ export default defineNuxtConfig({
 		}
 	},
 	css: [
-		"@unocss/reset/tailwind.css"
+		"@/assets/css/main.css"
 	],
-	fonts: {
-		defaults: {
-			weights: [`${100}..${900}`]
-		}
-	},
 	icon: {
-		mode: "svg"
+		customCollections: [
+			{
+				prefix: "local",
+				dir: "./app/assets/icons"
+			}
+		]
 	},
 	svgo: {
 		autoImportPath: "@/assets/"
@@ -42,6 +41,18 @@ export default defineNuxtConfig({
 	ssr: false,
 	dir: {
 		modules: "app/modules"
+	},
+	imports: {
+		presets: [
+			{
+				from: "zod",
+				imports: ["z", {
+					name: "infer",
+					as: "zInfer",
+					type: true
+				}]
+			}
+		]
 	},
 	vite: {
 		clearScreen: false,
@@ -72,5 +83,5 @@ export default defineNuxtConfig({
 	future: {
 		compatibilityVersion: 4
 	},
-	compatibilityDate: "2025-01-01"
+	compatibilityDate: "2025-02-01"
 });

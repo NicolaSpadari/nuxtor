@@ -29,7 +29,8 @@ Build super fast desktop applications!
 
 - Nuxt 3 (v4 ready!)
 - Tauri 2
-- UnoCSS
+- NuxtUI v3
+- TailwindCSS v4
 - Typescript
 - ESLint
 - Auto imports (for Tauri api too!)
@@ -85,8 +86,9 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 ## Notes
 
 - Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
-- Tauri js functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `src/modules/tauri.ts`
+- Tauri functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `app/modules/tauri.ts`
 - As per documentation, Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
+- NuxtUI is a very powerful UI library that consolidates design over the entire application. While there is a more complete pro version, it requires a license. It's up to you to buy the pro version, or stick with the free version.
 
 ## License
 
