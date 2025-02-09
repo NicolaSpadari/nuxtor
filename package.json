@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.2.0",
 	"private": true,
-	"packageManager": "pnpm@10.2.1",
+	"packageManager": "pnpm@9.15.4",
 	"description": "Starter template for Nuxt 3 and Tauri 2",
 	"author": "Nicola Spadari",
 	"license": "MIT",
