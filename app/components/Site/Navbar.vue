@@ -12,7 +12,8 @@
 				:items="desktopItems"
 				variant="link"
 				:ui="{
-					root: 'hidden md:flex'
+					root: 'hidden md:flex',
+					list: 'md:gap-x-2'
 				}"
 			/>
 		</UContainer>
