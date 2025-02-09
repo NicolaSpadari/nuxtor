@@ -16,7 +16,7 @@
 
 			<UForm :state="outputState" class="flex flex-col gap-y-4 items-end">
 				<UFormField label="Command output" name="command-output">
-					<UTextarea v-model="outputState.output" variant="subtle" size="lg" :rows="8" :resize="false" readonly />
+					<UTextarea v-model="outputState.output" variant="subtle" size="lg" :rows="8" readonly />
 				</UFormField>
 			</UForm>
 		</div>
