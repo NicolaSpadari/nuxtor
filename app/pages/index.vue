@@ -4,10 +4,10 @@
 			<SvgoLogo :filled="true" :font-controlled="false" class="mx-auto size-40" />
 
 			<div class="flex flex-col items-center gap-y-3">
-				<h1 class="animate-pulse text-3xl sm:text-4xl text-pretty font-bold text-(--ui-text-highlighted) font-heading md:mb-5">
+				<h1 class="animate-pulse text-3xl sm:text-4xl text-pretty font-bold font-heading md:mb-5">
 					{{ app.name.toUpperCase() }}
 				</h1>
-				<p class="leading-7 text-pretty text-center">
+				<p class="leading-7 text-pretty">
 					Powered by
 				</p>
 
@@ -17,7 +17,7 @@
 						size="xl"
 						:to="app.nuxtSite"
 						target="_blank"
-						:external="true"
+						external
 					>
 						Nuxt 3
 					</UButton>
@@ -26,7 +26,7 @@
 						size="xl"
 						:to="app.tauriSite"
 						target="_blank"
-						:external="true"
+						external
 					>
 						Tauri 2
 					</UButton>
@@ -35,7 +35,7 @@
 						size="xl"
 						:to="app.nuxtUiSite"
 						target="_blank"
-						:external="true"
+						external
 					>
 						NuxtUI 3
 					</UButton>
@@ -52,9 +52,14 @@
 		</div>
 
 		<div class="fixed bottom-6 text-sm absolute-center-h">
-			<p class="text-sm text-(--ui-text-muted)">
-				Made by {{ app.author }}
-			</p>
+			<div class="flex items-center gap-1 text-(--ui-text-muted)">
+				<p class="text-sm">
+					Made by
+				</p>
+				<ULink :to="app.repo" external target="_blank">
+					{{ app.author }}
+				</ULink>
+			</div>
 		</div>
 	</UContainer>
 </template>
