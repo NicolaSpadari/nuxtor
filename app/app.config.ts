@@ -33,6 +33,12 @@ export default defineAppConfig({
 				base: "resize-none"
 			}
 		},
+		accordion: {
+			slots: {
+				trigger: "cursor-pointer",
+				item: "md:py-2"
+			},
+		},
 		navigationMenu: {
 			slots: {
 				link: "cursor-pointer",
