@@ -1,44 +1,71 @@
 <template>
-	<div class="relative overflow-hidden px-6" lg="px-8">
-		<div class="grid mx-auto h-screen max-w-2xl place-content-center">
-			<SvgoLogo :filled="true" :font-controlled="false" class="mx-auto mb-8 size-40" />
+	<UContainer class="relative overflow-hidden h-screen">
+		<div class="grid size-full place-content-center gap-y-8">
+			<SvgoLogo :filled="true" :font-controlled="false" class="mx-auto size-40" />
 
-			<div class="text-center">
-				<h1 class="animate-pulse text-4xl text-light-300 font-bold tracking-wider font-heading" sm="text-6xl">
-					{{ name.toUpperCase() }}
+			<div class="flex flex-col items-center gap-y-3">
+				<h1 class="animate-pulse text-3xl sm:text-4xl text-pretty font-bold font-heading md:mb-5">
+					{{ app.name.toUpperCase() }}
 				</h1>
-				<p class="mt-5 flex gap-1 text-neutral-300 leading-8">
+				<p class="leading-7 text-pretty">
 					Powered by
-					<NuxtLink :to="nuxtSite" target="_blank" class="text-accent underline">
-						Nuxt 3
-					</NuxtLink>
-					-
-					<NuxtLink :to="tauriSite" target="_blank" class="text-accent underline">
-						Tauri 2
-					</NuxtLink>
-					-
-					<NuxtLink :to="unoSite" target="_blank" class="text-accent underline">
-						UnoCSS
-					</NuxtLink>
 				</p>
-				<div class="mt-15">
-					<Hyperlink :to="repo">
-						Star on GitHub
-					</Hyperlink>
+
+				<div class="flex flex-wrap justify-center gap-1 md:gap-3">
+					<UButton
+						variant="ghost"
+						size="xl"
+						:to="app.nuxtSite"
+						target="_blank"
+						external
+					>
+						Nuxt 3
+					</UButton>
+					<UButton
+						variant="ghost"
+						size="xl"
+						:to="app.tauriSite"
+						target="_blank"
+						external
+					>
+						Tauri 2
+					</UButton>
+					<UButton
+						variant="ghost"
+						size="xl"
+						:to="app.nuxtUiSite"
+						target="_blank"
+						external
+					>
+						NuxtUI 3
+					</UButton>
 				</div>
+			</div>
+
+			<div class="flex justify-center">
+				<UButton
+					:to="app.repo"
+				>
+					Star on GitHub
+				</UButton>
 			</div>
 		</div>
 
 		<div class="fixed bottom-6 text-sm absolute-center-h">
-			<p class="text-sm text-neutral-500">
-				Made by {{ author }}
-			</p>
+			<div class="flex items-center gap-1 text-(--ui-text-muted)">
+				<p class="text-sm">
+					Made by
+				</p>
+				<ULink :to="app.repo" external target="_blank">
+					{{ app.author }}
+				</ULink>
+			</div>
 		</div>
-	</div>
+	</UContainer>
 </template>
 
 <script lang="ts" setup>
-	const { name, author, repo, tauriSite, nuxtSite, unoSite } = useAppConfig();
+	const { app } = useAppConfig();
 
 	definePageMeta({
 		layout: "home"

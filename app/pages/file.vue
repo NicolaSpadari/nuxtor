@@ -3,67 +3,79 @@
 		title="File System"
 		description="Access the file system. For this demo the only allowed permission is read/write to the Documents folder (no sub directories)."
 	>
-		<form @submit.prevent="createDummyFile()">
-			<div class="mx-auto max-w-xl" lg="mr-0 max-w-lg">
-				<div class="grid grid-cols-1 gap-x-8 gap-y-6">
-					<div>
-						<label for="filename-input" class="block text-sm text-white font-semibold leading-6">
-							Text file name
-							<span class="text-neutral-400 font-light">(with extension)</span>
-						</label>
-						<div class="mt-2.5">
-							<input id="filename-input" v-model="fileName" type="text" name="filename-input" class="block w-full border-0 rounded-md bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-white/10 ring-inset" sm="text-sm leading-6" focus="ring-2 ring-emerald-500 ring-inset">
-						</div>
-					</div>
-					<div class="mt-8">
-						<label for="filecontent-input" class="block text-sm text-white font-semibold leading-6">File content</label>
-						<div mt="2.5">
-							<textarea id="filecontent-input" v-model="fileContent" name="filecontent-input" rows="10" class="block w-full border-0 rounded-md bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-white/10 ring-inset" sm="text-sm leading-6" focus="ring-2 ring-emerald-500 ring-inset" />
-						</div>
-					</div>
-					<div class="flex justify-end gap-3">
-						<div v-if="done" class="h-full flex-center text-emerald-400 space-x-1">
-							<p>Done</p>
-							<Icon name="heroicons-solid:check" class="size-4" />
-						</div>
-						<div v-if="error" class="h-full flex-center text-red-400 space-x-1">
-							<p>Error</p>
-							<Icon name="heroicons-solid:exclamation-triangle" class="size-4" />
-						</div>
-						<Btn type="submit" :disabled="fileName === ''">
-							Create file
-						</Btn>
-					</div>
-				</div>
-			</div>
-		</form>
+		<UForm :state="inputState" :schema="schema" class="flex flex-col gap-y-4 items-end" @submit="createFile">
+			<UFormField label="Text file name (with extension)" name="fileName">
+				<UInput v-model="inputState.fileName" variant="subtle" size="lg" />
+			</UFormField>
+
+			<UFormField label="File content" name="fileContent">
+				<UTextarea v-model="inputState.fileContent" variant="subtle" size="lg" :rows="10" />
+			</UFormField>
+
+			<UButton type="submit" size="lg">
+				Create file
+			</UButton>
+		</UForm>
 	</LayoutTile>
 </template>
 
 <script lang="ts" setup>
-	const fileName = ref("");
-	const fileContent = ref("");
-	const done = ref(false);
-	const error = ref(false);
+	definePageMeta({
+		name: "Files",
+		icon: "lucide:file-text"
+	});
 
-	const createDummyFile = async () => {
+	const schema = z.object({
+		fileName: z.string({
+			required_error: "File name is required"
+		}).nonempty().regex(/^[\w,\s-]+\.[A-Z0-9]+$/i, {
+			message: "Invalid filename format"
+		}),
+		fileContent: z.string({
+			required_error: "File content is required"
+		}).nonempty()
+	});
+
+	type Schema = zInfer<typeof schema>;
+
+	const inputState = ref<Partial<Schema>>({
+		fileName: undefined,
+		fileContent: undefined
+	});
+
+	const toast = useToast();
+
+	const createFile = async () => {
 		try {
-			const fileExists = await useTauriFsExists(fileName.value, {
+			const fileExists = await useTauriFsExists(inputState.value.fileName!, {
 				baseDir: useTauriFsBaseDirectory.Document
 			});
 
-			if (!fileExists) {
-				await useTauriFsWriteTextFile(fileName.value, fileContent.value, {
-					baseDir: useTauriFsBaseDirectory.Document
+			if (fileExists) {
+				toast.add({
+					title: "Error",
+					description: "The file already exists",
+					color: "error"
 				});
-				done.value = true;
-				fileName.value = fileContent.value = "";
-				setTimeout(() => done.value = false, 3000);
+
+				return;
 			}
+
+			await useTauriFsWriteTextFile(inputState.value.fileName!, inputState.value.fileContent!, {
+				baseDir: useTauriFsBaseDirectory.Document
+			});
+			toast.add({
+				title: "Success",
+				description: "The file has been created",
+				color: "success"
+			});
+			inputState.value.fileName = inputState.value.fileContent = undefined;
 		} catch (err) {
-			console.error("Error creating file:", err);
-			error.value = true;
-			setTimeout(() => error.value = false, 3000);
+			toast.add({
+				title: "Error",
+				description: String(err),
+				color: "error"
+			});
 		}
 	};
 </script>

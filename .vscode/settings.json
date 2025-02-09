@@ -5,6 +5,29 @@
 	// Use eslint as default formatter
 	"editor.formatOnSave": false,
 
+	// Tailwind compatibility
+	"tailwindCSS.validate": true,
+	"tailwindCSS.experimental.classRegex": [
+		[
+			"ui:\\s*{([^)]*)\\s*}",
+			"[\"'`]([^\"'`]*).*?[\"'`]"
+		],
+		[
+			"/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}",
+			":\\s*[\"'`]([^\"'`]*).*?[\"'`]"
+		]
+	],
+	"tailwindCSS.classAttributes": [
+		"class",
+		"ui"
+	],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": "on"
+	},
+
 	// Auto fix
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit",

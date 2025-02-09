@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"antfu.file-nesting",
+		"vue.volar",
+		"bradlc.vscode-tailwindcss"
+	]
+}

@@ -1,6 +1,6 @@
 <template>
 	<div class="top=1/5 pointer-events-none absolute inset-x-0 transform-gpu blur-3xl -z-10" aria-hidden="true">
-		<div class="blob relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] from-emerald-500 to-amber-400 bg-gradient-to-tr opacity-30 -translate-x-1/2" />
+		<div class="blob relative left-[calc(50%+36rem)] aspect-[1155/678] w-[72.1875rem] from-(--color-warning) to-(--color-success) bg-gradient-to-br opacity-30 -translate-x-1/2" />
 	</div>
 </template>
 
