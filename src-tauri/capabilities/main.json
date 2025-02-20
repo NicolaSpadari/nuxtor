@@ -1,9 +1,10 @@
 {
 	"$schema": "../gen/schemas/desktop-schema.json",
 	"identifier": "main",
-	"description": "Capabilities for the main window",
+	"description": "Capabilities for the app window",
 	"windows": [
-		"main"
+		"main",
+		"secondary"
 	],
 	"permissions": [
 		"core:path:default",
@@ -38,6 +39,8 @@
 		"os:allow-locale",
 		"fs:allow-document-read",
 		"fs:allow-document-write",
-		"store:default"
+		"store:default",
+		"core:webview:allow-create-webview",
+		"core:webview:allow-create-webview-window"
 	]
 }

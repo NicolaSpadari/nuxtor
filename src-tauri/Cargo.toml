@@ -29,7 +29,10 @@ serde_json = "1"
 
 [dependencies.tauri]
 version = "2.2.5"
-features = [ "tray-icon" ]
+features = [
+  "tray-icon",
+  "unstable"
+]
 
 [dependencies.serde]
 version = "1"
