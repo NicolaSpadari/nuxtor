@@ -46,11 +46,14 @@ export default defineNuxtConfig({
 		presets: [
 			{
 				from: "zod",
-				imports: ["z", {
-					name: "infer",
-					as: "zInfer",
-					type: true
-				}]
+				imports: [
+					"z",
+					{
+						name: "infer",
+						as: "zInfer",
+						type: true
+					}
+				]
 			}
 		]
 	},
