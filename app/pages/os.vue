@@ -10,7 +10,10 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "OS Informations",
-		icon: "lucide:info"
+		icon: "lucide:info",
+		category: "system",
+		categoryIcon: "lucide:square-terminal",
+		description: "Read operating system informations."
 	});
 
 	const items = ref([

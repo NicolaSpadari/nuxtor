@@ -22,7 +22,10 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "Notifications",
-		icon: "lucide:message-square-more"
+		icon: "lucide:message-square-more",
+		category: "interface",
+		categoryIcon: "lucide:app-window-mac",
+		description: "Send native notifications"
 	});
 
 	const schema = z.object({

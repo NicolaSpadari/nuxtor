@@ -22,7 +22,10 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "Files",
-		icon: "lucide:file-text"
+		icon: "lucide:file-text",
+		category: "storage",
+		categoryIcon: "lucide:database",
+		description: "Create and manage files"
 	});
 
 	const schema = z.object({

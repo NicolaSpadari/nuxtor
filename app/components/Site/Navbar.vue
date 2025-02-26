@@ -13,6 +13,7 @@
 				variant="link"
 				:ui="{
 					root: 'hidden md:flex',
+					viewportWrapper: 'max-w-2xl absolute-center-h',
 					list: 'md:gap-x-2'
 				}"
 			/>
