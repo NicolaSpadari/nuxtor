@@ -1,5 +1,6 @@
 export const usePages = () => {
 	const router = useRouter();
+	const { icons } = useAppConfig();
 
 	const routes = router.getRoutes().filter((route) => route.name !== "index" && route.name !== "all");
 
@@ -10,7 +11,7 @@ export const usePages = () => {
 		if (!acc[category]) {
 			acc[category] = {
 				label: category.charAt(0).toUpperCase() + category.slice(1),
-				icon: route.meta.categoryIcon || "i-lucide-folder",
+				icon: icons[category as keyof typeof icons] || "i-lucide-folder",
 				to: route.path,
 				children: []
 			};
@@ -19,7 +20,7 @@ export const usePages = () => {
 		acc[category].children.push({
 			label: route.meta.name as string,
 			description: route.meta.description as string,
-			icon: `i-${route.meta.icon}`,
+			icon: route.meta.icon,
 			to: route.path
 		});
 

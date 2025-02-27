@@ -24,7 +24,6 @@
 		name: "Notifications",
 		icon: "lucide:message-square-more",
 		category: "interface",
-		categoryIcon: "lucide:app-window-mac",
 		description: "Send native notifications"
 	});
 

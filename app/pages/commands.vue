@@ -28,8 +28,7 @@
 		name: "Shell commands",
 		icon: "lucide:terminal",
 		description: "Execute shell commands",
-		category: "system",
-		categoryIcon: "lucide:square-terminal"
+		category: "system"
 	});
 
 	const schema = z.object({

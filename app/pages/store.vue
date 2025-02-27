@@ -28,7 +28,6 @@
 		name: "Store",
 		icon: "lucide:database",
 		category: "storage",
-		categoryIcon: "lucide:database",
 		description: "Handle file creation in the file system"
 	});
 

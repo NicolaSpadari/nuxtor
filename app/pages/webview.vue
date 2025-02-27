@@ -17,9 +17,8 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "Webview",
-		icon: "lucide:app-window-mac",
+		icon: "lucide:app-window",
 		category: "interface",
-		categoryIcon: "lucide:app-window-mac",
 		description: "Create new webview in a detached window"
 	});
 

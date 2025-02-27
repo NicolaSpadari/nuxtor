@@ -24,7 +24,6 @@
 		name: "Files",
 		icon: "lucide:file-text",
 		category: "storage",
-		categoryIcon: "lucide:database",
 		description: "Create and manage files"
 	});
 

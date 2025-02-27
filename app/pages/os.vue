@@ -12,7 +12,6 @@
 		name: "OS Informations",
 		icon: "lucide:info",
 		category: "system",
-		categoryIcon: "lucide:square-terminal",
 		description: "Read operating system informations."
 	});
 
