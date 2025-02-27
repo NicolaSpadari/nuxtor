@@ -1,26 +1,26 @@
 export const usePages = () => {
 	const router = useRouter();
-	const { icons } = useAppConfig();
+	const { pageCategories } = useAppConfig();
 
 	const routes = router.getRoutes().filter((route) => route.name !== "index" && route.name !== "all");
 
 	const categorizedRoutes = routes.reduce((acc, route) => {
-		const category = route.meta.category as string;
+		const category = route.meta.category as string || "other";
 		if (!category) return acc;
 
 		if (!acc[category]) {
 			acc[category] = {
-				label: category.charAt(0).toUpperCase() + category.slice(1),
-				icon: icons[category as keyof typeof icons] || "i-lucide-folder",
+				label: pageCategories[category as keyof typeof pageCategories]?.label,
+				icon: pageCategories[category as keyof typeof pageCategories]?.icon || "i-lucide-folder",
 				to: route.path,
 				children: []
 			};
 		}
 
 		acc[category].children.push({
-			label: route.meta.name as string,
+			label: route.meta.name as string || route.name,
 			description: route.meta.description as string,
-			icon: route.meta.icon,
+			icon: route.meta.icon || "i-lucide-file",
 			to: route.path
 		});
 

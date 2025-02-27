@@ -7,10 +7,23 @@ export default defineAppConfig({
 		nuxtSite: "https://nuxt.com",
 		nuxtUiSite: "https://ui3.nuxt.dev"
 	},
-	icons: {
-		system: "lucide:square-terminal",
-		storage: "lucide:archive",
-		interface: "lucide:app-window-mac"
+	pageCategories: {
+		system: {
+			label: "System",
+			icon: "lucide:square-terminal"
+		},
+		storage: {
+			label: "Storage",
+			icon: "lucide:archive"
+		},
+		interface: {
+			label: "Interface",
+			icon: "lucide:app-window-mac"
+		},
+		other: {
+			label: "Other",
+			icon: "lucide:folder"
+		}
 	},
 	ui: {
 		colors: {
