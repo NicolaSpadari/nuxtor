@@ -23,6 +23,8 @@ Build super fast desktop applications!
 
 <p align="center">Powered by Nuxt 3</p>
 
+Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/preview.md)
+
 <br />
 
 ## Technologies run-down
