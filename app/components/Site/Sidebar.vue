@@ -3,7 +3,7 @@
 		<template #title>
 			<div class="flex gap-x-3">
 				<Icon name="local:logo" class="size-6" />
-				<span>NUXTOR</span>
+				<span class="uppercase">{{ name }}</span>
 			</div>
 		</template>
 		<template #description>
@@ -20,6 +20,7 @@
 </template>
 
 <script lang="ts" setup>
+	const { app: { name } } = useAppConfig();
 	const { pages } = usePages();
 	const { showSidebar } = useSidebar();
 	const tauriVersion = await useTauriAppGetTauriVersion();

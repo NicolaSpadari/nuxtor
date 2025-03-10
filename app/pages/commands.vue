@@ -25,8 +25,10 @@
 
 <script lang="ts" setup>
 	definePageMeta({
-		name: "Commands",
-		icon: "lucide:square-terminal"
+		name: "Shell commands",
+		icon: "lucide:terminal",
+		description: "Execute shell commands",
+		category: "system"
 	});
 
 	const schema = z.object({

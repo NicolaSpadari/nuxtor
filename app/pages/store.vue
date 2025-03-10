@@ -26,7 +26,9 @@
 <script lang="ts" setup>
 	definePageMeta({
 		name: "Store",
-		icon: "lucide:database"
+		icon: "lucide:database",
+		category: "storage",
+		description: "Handle file creation in the file system"
 	});
 
 	const schema = z.object({

@@ -46,11 +46,14 @@ export default defineNuxtConfig({
 		presets: [
 			{
 				from: "zod",
-				imports: ["z", {
-					name: "infer",
-					as: "zInfer",
-					type: true
-				}]
+				imports: [
+					"z",
+					{
+						name: "infer",
+						as: "zInfer",
+						type: true
+					}
+				]
 			}
 		]
 	},
@@ -72,6 +75,11 @@ export default defineNuxtConfig({
 	devServer: {
 		host: "0.0.0.0"
 	},
+	router: {
+		options: {
+			scrollBehaviorType: "smooth"
+		}
+	},
 	eslint: {
 		config: {
 			standalone: false
@@ -83,5 +91,5 @@ export default defineNuxtConfig({
 	future: {
 		compatibilityVersion: 4
 	},
-	compatibilityDate: "2025-02-01"
+	compatibilityDate: "2025-03-01"
 });
