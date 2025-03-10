@@ -7,6 +7,24 @@ export default defineAppConfig({
 		nuxtSite: "https://nuxt.com",
 		nuxtUiSite: "https://ui3.nuxt.dev"
 	},
+	pageCategories: {
+		system: {
+			label: "System",
+			icon: "lucide:square-terminal"
+		},
+		storage: {
+			label: "Storage",
+			icon: "lucide:archive"
+		},
+		interface: {
+			label: "Interface",
+			icon: "lucide:app-window-mac"
+		},
+		other: {
+			label: "Other",
+			icon: "lucide:folder"
+		}
+	},
 	ui: {
 		colors: {
 			primary: "green",
@@ -37,11 +55,11 @@ export default defineAppConfig({
 			slots: {
 				trigger: "cursor-pointer",
 				item: "md:py-2"
-			},
+			}
 		},
 		navigationMenu: {
 			slots: {
-				link: "cursor-pointer",
+				link: "cursor-pointer"
 			},
 			variants: {
 				disabled: {
