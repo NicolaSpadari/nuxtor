@@ -18,6 +18,10 @@
 }
 
 @layer utilities {
+	img{
+		user-select: none;
+		-webkit-user-drag: none;
+	}
 	.flex-center {
 		@apply flex justify-center items-center;
 	}
