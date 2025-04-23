@@ -28,7 +28,7 @@ tauri-plugin-store = "2.2.0"
 serde_json = "1"
 
 [dependencies.tauri]
-version = "2.5.0"
+version = "2.5.1"
 features = [
   "tray-icon",
   "unstable"
