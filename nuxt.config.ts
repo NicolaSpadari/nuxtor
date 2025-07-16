@@ -85,11 +85,11 @@ export default defineNuxtConfig({
 			standalone: false
 		}
 	},
+	devtools: {
+		enabled: false
+	},
 	experimental: {
 		typedPages: true
 	},
-	future: {
-		compatibilityVersion: 4
-	},
-	compatibilityDate: "2025-04-01"
+	compatibilityDate: "2025-07-01"
 });

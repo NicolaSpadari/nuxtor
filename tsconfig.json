@@ -1,13 +1,22 @@
 {
-	"extends": "./.nuxt/tsconfig.json",
 	"compilerOptions": {
+		"composite": true,
 		"target": "ESNext",
-		"module": "ESNext",
-		"strict": true
+		"module": "ESNext"
 	},
-	"include": [
-		".nuxt/nuxt.d.ts",
-		"env.d.ts",
-		"**/*"
-	]
+	"references": [
+		{
+			"path": "./.nuxt/tsconfig.app.json"
+		},
+		{
+			"path": "./.nuxt/tsconfig.server.json"
+		},
+		{
+			"path": "./.nuxt/tsconfig.shared.json"
+		},
+		{
+			"path": "./.nuxt/tsconfig.node.json"
+		}
+	],
+	"files": []
 }

@@ -29,7 +29,7 @@
 
 	const schema = z.object({
 		notificationTitle: z.string({
-			required_error: "Title is required"
+			error: "Title is required"
 		}).nonempty(),
 		notificationBody: z.string().optional()
 	});

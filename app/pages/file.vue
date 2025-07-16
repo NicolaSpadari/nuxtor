@@ -29,12 +29,12 @@
 
 	const schema = z.object({
 		fileName: z.string({
-			required_error: "File name is required"
+			error: "File name is required"
 		}).nonempty().regex(/^[\w,\s-]+\.[A-Z0-9]+$/i, {
 			message: "Invalid filename format"
 		}),
 		fileContent: z.string({
-			required_error: "File content is required"
+			error: "File content is required"
 		}).nonempty()
 	});
 
