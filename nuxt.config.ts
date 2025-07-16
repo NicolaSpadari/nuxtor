@@ -1,3 +1,5 @@
+import { devtools } from "vue";
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -84,6 +86,9 @@ export default defineNuxtConfig({
 		config: {
 			standalone: false
 		}
+	},
+	devtools: {
+		enabled: false
 	},
 	experimental: {
 		typedPages: true
