@@ -3,7 +3,6 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@nuxt/ui",
 		"nuxt-svgo",
-		"nuxt-bits",
 		"reka-ui/nuxt",
 		"@nuxt/eslint"
 	],
