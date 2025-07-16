@@ -30,20 +30,20 @@
 		"@tauri-apps/plugin-os": "^2.3.0",
 		"@tauri-apps/plugin-shell": "^2.3.0",
 		"@tauri-apps/plugin-store": "^2.3.0",
-		"nuxt": "^3.17.6",
+		"nuxt": "^4.0.0",
 		"vue": "^3.5.17",
 		"vue-router": "^4.5.1",
 		"zod": "^4.0.5"
 	},
 	"devDependencies": {
-		"@antfu/eslint-config": "^4.16.2",
+		"@antfu/eslint-config": "^4.17.0",
 		"@nuxt/eslint": "^1.5.2",
 		"@tauri-apps/cli": "^2.6.2",
 		"@vueuse/core": "^13.5.0",
 		"@vueuse/nuxt": "^13.5.0",
 		"bumpp": "^10.2.0",
 		"eslint": "^9.31.0",
-		"nuxt-svgo": "^4.2.3",
+		"nuxt-svgo": "^4.2.4",
 		"typescript": "^5.8.3"
 	},
 	"resolutions": {

@@ -80,11 +80,6 @@ export default defineNuxtConfig({
 			scrollBehaviorType: "smooth"
 		}
 	},
-	$development: {
-		devtools: {
-			enabled: true
-		}
-	},
 	eslint: {
 		config: {
 			standalone: false
@@ -92,9 +87,6 @@ export default defineNuxtConfig({
 	},
 	experimental: {
 		typedPages: true
-	},
-	future: {
-		compatibilityVersion: 4
 	},
 	compatibilityDate: "2025-07-01"
 });

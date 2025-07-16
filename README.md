@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">NUXTOR</h1>
 <p align="center">
-A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a>, made with <a href="https://nuxt.com">Nuxt 3</a> and <a href="https://v2.tauri.app">Tauri 2</a>
+A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a>, made with <a href="https://nuxt.com">Nuxt 4</a> and <a href="https://v2.tauri.app">Tauri 2</a>
 <br>
 Build super fast desktop applications!
 </p>
@@ -21,7 +21,7 @@ Build super fast desktop applications!
 <img src="./public/screenshot.png">
 </div>
 
-<p align="center">Powered by Nuxt 3</p>
+<p align="center">Powered by Nuxt 4</p>
 
 Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md)
 
@@ -29,8 +29,8 @@ Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob
 
 ## Technologies run-down
 
-- Nuxt 3 (v4 ready!)
-- Tauri 2
+- Nuxt v4
+- Tauri v2
 - NuxtUI v3
 - TailwindCSS v4
 - Typescript
@@ -89,7 +89,7 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 
 - Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
 - Tauri functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `app/modules/tauri.ts`
-- As per documentation, Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
+- As per [documentation](https://v2.tauri.app/start/frontend/nuxt/#checklist), Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
 - NuxtUI is a very powerful UI library that consolidates design over the entire application. While there is a more complete pro version, it requires a license. It's up to you to buy the pro version, or stick with the free version.
 
 ## License
