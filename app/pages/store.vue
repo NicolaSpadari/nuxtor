@@ -33,7 +33,7 @@
 
 	const schema = z.object({
 		value: z.string({
-			required_error: "Store key is required"
+			error: "Store key is required"
 		}).nonempty()
 	});
 

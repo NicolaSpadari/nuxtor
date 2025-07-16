@@ -5,7 +5,7 @@ export default defineAppConfig({
 		repo: "https://github.com/NicolaSpadari/nuxtor",
 		tauriSite: "https://tauri.app",
 		nuxtSite: "https://nuxt.com",
-		nuxtUiSite: "https://ui3.nuxt.dev"
+		nuxtUiSite: "https://ui.nuxt.dev"
 	},
 	pageCategories: {
 		system: {

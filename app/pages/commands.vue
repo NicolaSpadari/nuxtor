@@ -33,7 +33,7 @@
 
 	const schema = z.object({
 		input: z.string({
-			required_error: "Input is required"
+			error: "Input is required"
 		}).nonempty()
 	});
 

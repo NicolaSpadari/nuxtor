@@ -19,7 +19,7 @@
 						target="_blank"
 						external
 					>
-						Nuxt 3
+						Nuxt 4
 					</UButton>
 					<UButton
 						variant="ghost"
