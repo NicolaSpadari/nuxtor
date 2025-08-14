@@ -16,6 +16,10 @@ export default defineAppConfig({
 			label: "Storage",
 			icon: "lucide:archive"
 		},
+		media: {
+			label: "Media",
+			icon: "lucide:film"
+		},
 		interface: {
 			label: "Interface",
 			icon: "lucide:app-window-mac"

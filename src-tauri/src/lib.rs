@@ -4,6 +4,27 @@ use tauri::{
 	menu::{Menu, MenuItem},
 	tray::TrayIconBuilder
 };
+use std::process::Command;
+
+#[tauri::command]
+async fn convert_to_gif(input_path: String, output_path: String) -> Result<(), String> {
+    let output = Command::new("ffmpeg")
+        .arg("-i")
+        .arg(&input_path)
+        .arg(&output_path)
+        .output();
+
+    match output {
+        Ok(output) => {
+            if output.status.success() {
+                Ok(())
+            } else {
+                Err(String::from_utf8_lossy(&output.stderr).to_string())
+            }
+        }
+        Err(e) => Err(e.to_string()),
+    }
+}
 
 pub fn run() {
     tauri::Builder::default()
@@ -32,6 +53,7 @@ pub fn run() {
 		.plugin(tauri_plugin_os::init())
 		.plugin(tauri_plugin_fs::init())
 		.plugin(tauri_plugin_store::Builder::new().build())
+		.invoke_handler(tauri::generate_handler![convert_to_gif])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
