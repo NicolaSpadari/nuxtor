@@ -26,9 +26,9 @@
 		}
 	},
 	"build": {
-		"beforeBuildCommand": "pnpm generate",
+		"beforeBuildCommand": "bun run generate",
 		"frontendDist": "../dist",
-		"beforeDevCommand": "pnpm dev",
+		"beforeDevCommand": "bun run dev",
 		"devUrl": "http://localhost:3000"
 	},
 	"productName": "Nuxtor",
