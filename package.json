@@ -1,7 +1,7 @@
 {
 	"name": "nuxtor",
 	"type": "module",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"private": true,
 	"packageManager": "bun@1.2.22",
 	"description": "Starter template for Nuxt 4 and Tauri 2",
