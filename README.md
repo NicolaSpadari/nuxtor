@@ -31,7 +31,7 @@ Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob
 
 - Nuxt v4
 - Tauri v2
-- NuxtUI v3
+- NuxtUI v4
 - TailwindCSS v4
 - Typescript
 - ESLint
@@ -48,8 +48,8 @@ Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob
 
 ## Setup
 
-  - Before running this app, you need to configure your environment with Rust. Take a look at the [Tauri docs](https://v2.tauri.app/start/prerequisites).
-  - This project enforces [pnpm](https://pnpm.io). In order to use another package manager you need to update `package.json` and `tauri.conf.json`
+  - Before running this app, you need to configure your environment with Rust. Take a look at the [Tauri docs](https://tauri.app/start/prerequisites).
+  - This project enforces [bun](https://bun.sh). In order to use another package manager you need to update `package.json` and `tauri.conf.json`
   - The frontend runs on the usual port `3000` of Nuxt, the Tauri server uses the port `3001`. This settings are customizable in the `nuxt.config.ts` and `tauri.conf.json`.
   - Once ready, follow these commands:
 
@@ -61,10 +61,10 @@ Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob
   $ cd my-nuxtor-app
 
   # install dependencies
-  $ pnpm install
+  $ bun install
 
   # start the project
-  $ pnpm run tauri:dev
+  $ bun run tauri:dev
   ```
 
   This will run the Nuxt frontend and will launch the Tauri window.
@@ -72,7 +72,7 @@ Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob
 ## Build
 
   ```sh
-  $ pnpm run tauri:build
+  $ bun run tauri:build
   ```
 
 This command will generate the Nuxt static output and bundle the project under `src-tauri/target`.
@@ -80,7 +80,7 @@ This command will generate the Nuxt static output and bundle the project under `
 ## Debug
 
   ```sh
-  $ pnpm run tauri:build:debug
+  $ bun run tauri:build:debug
   ```
 
 The same Tauri bundle will generate under `src-tauri/target`, but with the ability to open the console.
@@ -89,8 +89,8 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 
 - Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
 - Tauri functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `app/modules/tauri.ts`
-- As per [documentation](https://v2.tauri.app/start/frontend/nuxt/#checklist), Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
-- NuxtUI is a very powerful UI library that consolidates design over the entire application. While there is a more complete pro version, it requires a license. It's up to you to buy the pro version, or stick with the free version.
+- As per [documentation](https://tauri.app/start/frontend/nuxt/#checklist), Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
+- NuxtUI is a very powerful UI library that consolidates design over the entire application. While version 4 is still in alpha, it includes old pro components of the v3.
 
 ## License
 
