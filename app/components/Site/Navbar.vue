@@ -1,5 +1,5 @@
 <template>
-	<UHeader class="bg-(--ui-bg)/15 backdrop-blur border-0">
+	<UHeader>
 		<template #title>
 			<NuxtLink to="/" class="group/logo">
 				<SvgoLogo :font-controlled="false" class="opacity-70 group-hover/logo:opacity-100 transition-opacity size-6" />
