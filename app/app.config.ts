@@ -5,7 +5,7 @@ export default defineAppConfig({
 		repo: "https://github.com/NicolaSpadari/nuxtor",
 		tauriSite: "https://tauri.app",
 		nuxtSite: "https://nuxt.com",
-		nuxtUiSite: "https://ui.nuxt.dev"
+		nuxtUiSite: "https://ui4.nuxt.dev"
 	},
 	pageCategories: {
 		system: {
@@ -60,13 +60,6 @@ export default defineAppConfig({
 		navigationMenu: {
 			slots: {
 				link: "cursor-pointer"
-			},
-			variants: {
-				disabled: {
-					true: {
-						link: "cursor-text"
-					}
-				}
 			}
 		}
 	}
