@@ -43,13 +43,13 @@ jobs:
           sudo apt-get install -y libwebkit2gtk-4.0-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
         # webkitgtk 4.0 is for Tauri v1 - webkitgtk 4.1 is for Tauri v2.
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 10.13.1
+          bun-version: 1.2.19
 
       - name: install frontend dependencies
-        run: pnpm install
+        run: bun install
 
       - uses: tauri-apps/tauri-action@v0
         env:

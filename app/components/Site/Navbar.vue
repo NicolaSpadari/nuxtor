@@ -1,72 +1,34 @@
 <template>
-	<header class="top-0 z-10">
-		<UContainer class="md:py-2">
+	<UHeader>
+		<template #title>
+			<NuxtLink to="/" class="group/logo">
+				<SvgoLogo :font-controlled="false" class="opacity-70 group-hover/logo:opacity-100 transition-opacity size-6" />
+			</NuxtLink>
+		</template>
+		<UNavigationMenu
+			:items="pages"
+			variant="link"
+			:ui="{
+				viewportWrapper: 'w-2xl absolute-center-h',
+				list: 'gap-x-3'
+			}"
+		/>
+		<template #body>
 			<UNavigationMenu
-				:items="mobileItems"
+				:items="pages"
+				orientation="vertical"
 				variant="link"
-				:ui="{
-					root: 'md:hidden'
-				}"
 			/>
-			<UNavigationMenu
-				:items="desktopItems"
-				variant="link"
-				:ui="{
-					root: 'hidden md:flex',
-					viewportWrapper: 'max-w-2xl absolute-center-h',
-					list: 'md:gap-x-2'
-				}"
-			/>
-		</UContainer>
-	</header>
+		</template>
+		<template #right>
+			<UBadge variant="subtle">
+				Tauri v{{ tauriVersion }}
+			</UBadge>
+		</template>
+	</UHeader>
 </template>
 
 <script lang="ts" setup>
 	const { pages } = usePages();
-	const { showSidebar } = useSidebar();
 	const tauriVersion = await useTauriAppGetTauriVersion();
-
-	const mobileItems = ref<any[]>([
-		[
-			{
-				avatar: {
-					icon: "local:logo",
-					size: "xl",
-					ui: {
-						root: "bg-transparent"
-					}
-				},
-				to: "/"
-			}
-		],
-		[
-			{
-				icon: "lucide:menu",
-				onSelect: () => showSidebar.value = true
-			}
-		]
-	]);
-
-	const desktopItems = ref<any[]>([
-		[
-			{
-				avatar: {
-					icon: "local:logo",
-					size: "3xl",
-					ui: {
-						root: "group bg-transparent",
-						icon: "opacity-70 group-hover:opacity-100"
-					}
-				},
-				to: "/"
-			}
-		],
-		pages,
-		[
-			{
-				label: `v${tauriVersion}`,
-				disabled: true
-			}
-		]
-	]);
 </script>

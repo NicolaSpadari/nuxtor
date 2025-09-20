@@ -24,20 +24,20 @@
 					<UButton
 						variant="ghost"
 						size="xl"
+						:to="app.nuxtUiSite"
+						target="_blank"
+						external
+					>
+						NuxtUI 4
+					</UButton>
+					<UButton
+						variant="ghost"
+						size="xl"
 						:to="app.tauriSite"
 						target="_blank"
 						external
 					>
 						Tauri 2
-					</UButton>
-					<UButton
-						variant="ghost"
-						size="xl"
-						:to="app.nuxtUiSite"
-						target="_blank"
-						external
-					>
-						NuxtUI 3
 					</UButton>
 				</div>
 			</div>
