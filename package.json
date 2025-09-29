@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.5.0",
 	"private": true,
-	"packageManager": "bun@1.2.22",
+	"packageManager": "bun@1.2.19",
 	"description": "Starter template for Nuxt 4 and Tauri 2",
 	"author": "Nicola Spadari",
 	"license": "MIT",
@@ -23,7 +23,7 @@
 		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
-		"@nuxt/ui": "4.0.0-alpha.2",
+		"@nuxt/ui": "^4.0.0",
 		"@tauri-apps/api": "^2.8.0",
 		"@tauri-apps/plugin-fs": "^2.4.2",
 		"@tauri-apps/plugin-notification": "^2.3.1",
@@ -31,9 +31,9 @@
 		"@tauri-apps/plugin-shell": "^2.3.1",
 		"@tauri-apps/plugin-store": "^2.4.0",
 		"nuxt": "^4.1.2",
-		"vue": "^3.5.21",
+		"vue": "^3.5.22",
 		"vue-router": "^4.5.1",
-		"zod": "^4.1.9"
+		"zod": "^4.1.11"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^5.4.1",
@@ -47,7 +47,8 @@
 		"typescript": "^5.9.2"
 	},
 	"resolutions": {
-		"typescript": "npm:tslite@latest"
+		"typescript": "npm:tslite@latest",
+		"vite": "npm:rolldown-vite@latest"
 	},
 	"trustedDependencies": [
 		"@parcel/watcher",
