@@ -1,3 +1,7 @@
+import process from "node:process";
+
+const host = process.env.TAURI_DEV_HOST;
+
 export default defineNuxtConfig({
 	modules: [
 		"@vueuse/nuxt",
@@ -12,7 +16,8 @@ export default defineNuxtConfig({
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
 			meta: [
-				{ name: "format-detection", content: "no" }
+				{ name: "format-detection", content: "no" },
+				{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" }
 			]
 		},
 		pageTransition: {
@@ -54,18 +59,20 @@ export default defineNuxtConfig({
 		envPrefix: ["VITE_", "TAURI_"],
 		server: {
 			strictPort: true,
-			hmr: {
-				protocol: "ws",
-				host: "0.0.0.0",
-				port: 3001
-			},
+			hmr: host
+				? {
+					protocol: "ws",
+					host,
+					port: 3001
+				}
+				: undefined,
 			watch: {
 				ignored: ["**/src-tauri/**"]
 			}
 		}
 	},
 	devServer: {
-		host: "0.0.0.0"
+		host: host || "0"
 	},
 	router: {
 		options: {
