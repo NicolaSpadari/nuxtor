@@ -1,0 +1,4 @@
+src/generated/*.rs
+icons/
+gen/apple/
+gen/android/
