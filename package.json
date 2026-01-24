@@ -16,12 +16,12 @@
 		"bump": "bumpp",
 		"tauri": "tauri",
 		"tauri:dev": "tauri dev",
-		"tauri:dev:ios": "tauri ios dev 'iPhone 17'",
+		"tauri:dev:ios": "tauri ios dev",
 		"tauri:dev:android": "tauri android dev",
 		"tauri:build": "tauri build",
 		"tauri:build:debug": "tauri build --debug",
 		"tauri:build:ios": "tauri ios build",
-		"tauri:build:android": "tauri android build --apk"
+		"tauri:build:android": "tauri android build"
 	},
 	"dependencies": {
 		"@nuxt/ui": "^4.4.0",

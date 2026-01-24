@@ -92,9 +92,18 @@ The same Tauri bundle will generate under `src-tauri/target`, but with the abili
 - Make sure to have created a development team in XCode and you have choosen command line tools location in settings
 - You must install homebrew and through that install `cocoapods`
 - First time only, run `tauri ios init`
-- If everything is installed correctly, running `bun tauri:ios:dev` should fire up the iOS simulator and install Nuxtor.
+- If everything is installed correctly, running `bun tauri:ios:dev` should fire up the iOS simulator and install Nuxtor
 - In XCode you should set All, Debug, Release "Automatically manage signing" and choose yout personal Team
 - Running `bun tauri:build:ios` will generate the .ipa file
+
+## Android development
+
+- Requires Android Studio installed
+- You must first setup your environment and Android SDK, as per [documentation](https://tauri.app/develop/#developing-your-mobile-application)
+- Make sure to have installed all SDK components and NDK as indicated
+- First time only, run `tauri android init`
+- If everything is installed correctly, running `bun tauri:android:dev` should fire up the Android emulator and install Nuxtor
+- Running `bun tauri:build:android` will generate the .apk file
 
 ## Notes
 

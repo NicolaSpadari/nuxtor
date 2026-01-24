@@ -14,6 +14,16 @@ App preview on the simulator
 
 ---
 
+## Android version
+
+App preview on the simulator
+
+<div align="center">
+<img src="./public/android.png">
+</div>
+
+---
+
 ## Commands page
 
 Access the system shell
