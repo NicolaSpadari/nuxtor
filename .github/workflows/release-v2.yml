@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-			# Node
+      # Node
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
@@ -47,7 +47,7 @@ jobs:
       - name: install frontend dependencies
         run: bun install
 
-			# Rust
+      # Rust
       - name: install Rust stable (desktop)
         if: matrix.mobile == ''
         uses: dtolnay/rust-toolchain@stable
@@ -92,7 +92,7 @@ jobs:
         with:
           xcode-version: 26.1
 
-			# Apple key
+      # Apple key
       - name: setup Apple API key
         if: matrix.mobile == 'ios'
         run: |
