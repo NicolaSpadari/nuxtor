@@ -1,29 +1,32 @@
-#[cfg_attr(mobile, tauri::mobile_entry_point)]
-
+#[cfg(desktop)]
 use tauri::{
 	menu::{Menu, MenuItem},
 	tray::TrayIconBuilder
 };
 
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-		.setup(|app| {
-			let quit_i = MenuItem::with_id(app, "quit", "Quit", true, None::<&str>)?;
-			let menu = Menu::with_items(app, &[&quit_i])?;
+		.setup(|_app| {
+			#[cfg(desktop)]
+			{
+				let quit_i = MenuItem::with_id(_app, "quit", "Quit", true, None::<&str>)?;
+				let menu = Menu::with_items(_app, &[&quit_i])?;
 
-			let _tray = TrayIconBuilder::new()
-				.menu(&menu)
-				.show_menu_on_left_click(true)
-				.icon(app.default_window_icon().unwrap().clone())
-				.on_menu_event(|app, event| match event.id.as_ref() {
-					"quit" => {
-						app.exit(0);
-					}
-					other => {
-						println!("menu item {} not handled", other);
-					}
-				})
-				.build(app)?;
+				let _tray = TrayIconBuilder::new()
+					.menu(&menu)
+					.show_menu_on_left_click(true)
+					.icon(_app.default_window_icon().unwrap().clone())
+					.on_menu_event(|app, event| match event.id.as_ref() {
+						"quit" => {
+							app.exit(0);
+						}
+						other => {
+							println!("menu item {} not handled", other);
+						}
+					})
+					.build(_app)?;
+			}
 
 			Ok(())
 		})

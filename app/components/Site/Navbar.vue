@@ -24,6 +24,7 @@
 			<UBadge variant="subtle">
 				Tauri v{{ tauriVersion }}
 			</UBadge>
+			<UColorModeButton />
 		</template>
 	</UHeader>
 </template>

@@ -1,8 +1,28 @@
 # Preview
 
-Since Nuxtor is a desktop application, there is no way of showing the look and feel of the released project.
+Since Nuxtor is a compiled application, there is no way of showing the look and feel of the released project.
 
 What follows are each page and its functionalities:
+
+## iOS version
+
+App preview on the simulator
+
+<div align="center">
+<img src="./public/ios.png">
+</div>
+
+---
+
+## Android version
+
+App preview on the simulator
+
+<div align="center">
+<img src="./public/android.png">
+</div>
+
+---
 
 ## Commands page
 
