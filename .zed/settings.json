@@ -1,0 +1,67 @@
+{
+	// Tailwind CSS language server settings
+	"lsp": {
+		"tailwindcss-language-server": {
+			"settings": {
+				"experimental": {
+					"classRegex": [
+						["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+					]
+				},
+				"classAttributes": ["class", "ui"]
+			}
+		}
+	},
+
+	// Language-specific settings
+	"languages": {
+		"CSS": {
+			"language_servers": ["tailwindcss-language-server", "!vscode-css-language-server"]
+		},
+		"JavaScript": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"TypeScript": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"Vue.js": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"HTML": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"Markdown": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"JSON": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"JSONC": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"YAML": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		},
+		"TOML": {
+			"formatter": {
+				"code_action": "source.fixAll.eslint"
+			}
+		}
+	}
+}

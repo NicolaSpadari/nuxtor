@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07118ED04E396421CBFE2858 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E0B530C4933FE42B7A8E2C /* WebKit.framework */; };
+		23D05B4BB1B150F7E78B9F4C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0029E0BBC136CAE437F0E308 /* Security.framework */; };
+		2873873541D2803BF068146D /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = AD1482288C9FAF5771C99D8B /* main.mm */; };
+		4968F39DF7A47BB6753D21BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC70E74763A1613C26EC6CE6 /* CoreGraphics.framework */; };
+		528F8C242DB1621F8F0D878A /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = 1066B6BD3FCC302156AA30E2 /* libapp.a */; };
+		8B27DBF032FCAEE83E5CC48B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A93B96EDA3F841C3C295E1 /* LaunchScreen.storyboard */; };
+		8B636DB94E91AA914AE463BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC24C31EDC3DA4BBB60B4550 /* QuartzCore.framework */; };
+		8BF45BD95739C62CCEFC4D88 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB9AADE728FB57BF8862835 /* Metal.framework */; };
+		9A03360AD5FFEDE2A84E732B /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6BCE1357C084312B80A8A6 /* libapp.a */; };
+		9E117B18F66C9787CE551C9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6668A2D449EE7FA68AEB8E /* Assets.xcassets */; };
+		B701003F22441E51A99EDFDF /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E9C8C5B8E39ECE2554F3B1 /* MetalKit.framework */; };
+		DFC2BE838AA4EEF51D9907B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930F45E901BD48A4B4D7C25F /* UIKit.framework */; };
+		F40DC036CB35B1880728E4DD /* assets in Resources */ = {isa = PBXBuildFile; fileRef = C7CC9F6B68ED79302FC49105 /* assets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0029E0BBC136CAE437F0E308 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1066B6BD3FCC302156AA30E2 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		11E9C8C5B8E39ECE2554F3B1 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		20C4090987365470A3C1626A /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
+		57E0B530C4933FE42B7A8E2C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		656C2665FC5F04A755AE6BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7D19A3D084922CB7F1FC43C7 /* Nuxtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nuxtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D27CFB2DAB35F0FA43CBF4C /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		8E6BCE1357C084312B80A8A6 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		930F45E901BD48A4B4D7C25F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AD1482288C9FAF5771C99D8B /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		B3E2811559F99C854A2BAD1F /* nuxtor_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nuxtor_iOS.entitlements; sourceTree = "<group>"; };
+		C7CC9F6B68ED79302FC49105 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		CC24C31EDC3DA4BBB60B4550 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DAB9AADE728FB57BF8862835 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		E3F0C570B3020883444B0D7B /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
+		EA6668A2D449EE7FA68AEB8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC70E74763A1613C26EC6CE6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F0A93B96EDA3F841C3C295E1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6ECF19B921C2F18DC195C2FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A03360AD5FFEDE2A84E732B /* libapp.a in Frameworks */,
+				4968F39DF7A47BB6753D21BA /* CoreGraphics.framework in Frameworks */,
+				8BF45BD95739C62CCEFC4D88 /* Metal.framework in Frameworks */,
+				B701003F22441E51A99EDFDF /* MetalKit.framework in Frameworks */,
+				8B636DB94E91AA914AE463BC /* QuartzCore.framework in Frameworks */,
+				23D05B4BB1B150F7E78B9F4C /* Security.framework in Frameworks */,
+				DFC2BE838AA4EEF51D9907B3 /* UIKit.framework in Frameworks */,
+				07118ED04E396421CBFE2858 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24EB5FE4C9665CC727D78880 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F94D9E3DE510B24EBF4C33D4 /* nuxtor */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4653DC4181D042F7E7772D84 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				F98A2A940BBC7D28564DE683 /* arm64 */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		563801E16686B81FC425B4F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC70E74763A1613C26EC6CE6 /* CoreGraphics.framework */,
+				8E6BCE1357C084312B80A8A6 /* libapp.a */,
+				DAB9AADE728FB57BF8862835 /* Metal.framework */,
+				11E9C8C5B8E39ECE2554F3B1 /* MetalKit.framework */,
+				CC24C31EDC3DA4BBB60B4550 /* QuartzCore.framework */,
+				0029E0BBC136CAE437F0E308 /* Security.framework */,
+				930F45E901BD48A4B4D7C25F /* UIKit.framework */,
+				57E0B530C4933FE42B7A8E2C /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70CDACAAC9829AB234B6D7C5 = {
+			isa = PBXGroup;
+			children = (
+				C7CC9F6B68ED79302FC49105 /* assets */,
+				EA6668A2D449EE7FA68AEB8E /* Assets.xcassets */,
+				F0A93B96EDA3F841C3C295E1 /* LaunchScreen.storyboard */,
+				4653DC4181D042F7E7772D84 /* Externals */,
+				8D31C5187C9939AEF03F74F1 /* nuxtor_iOS */,
+				24EB5FE4C9665CC727D78880 /* Sources */,
+				F0835E13E11CD15F15084D45 /* src */,
+				563801E16686B81FC425B4F9 /* Frameworks */,
+				F441EF35FC28CF12E333F056 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8D31C5187C9939AEF03F74F1 /* nuxtor_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				656C2665FC5F04A755AE6BB0 /* Info.plist */,
+				B3E2811559F99C854A2BAD1F /* nuxtor_iOS.entitlements */,
+			);
+			path = nuxtor_iOS;
+			sourceTree = "<group>";
+		};
+		9ECDE95D0E567BB6ACB60B69 /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				7D27CFB2DAB35F0FA43CBF4C /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		DCE4B02914D4E8740C3DA823 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				1066B6BD3FCC302156AA30E2 /* libapp.a */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		F0835E13E11CD15F15084D45 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				20C4090987365470A3C1626A /* lib.rs */,
+				E3F0C570B3020883444B0D7B /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		F441EF35FC28CF12E333F056 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D19A3D084922CB7F1FC43C7 /* Nuxtor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F94D9E3DE510B24EBF4C33D4 /* nuxtor */ = {
+			isa = PBXGroup;
+			children = (
+				AD1482288C9FAF5771C99D8B /* main.mm */,
+				9ECDE95D0E567BB6ACB60B69 /* bindings */,
+			);
+			path = nuxtor;
+			sourceTree = "<group>";
+		};
+		F98A2A940BBC7D28564DE683 /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4B02914D4E8740C3DA823 /* debug */,
+			);
+			path = arm64;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8387EB83066CD38452993DE /* nuxtor_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18CC5F46D7C42F18C836A129 /* Build configuration list for PBXNativeTarget "nuxtor_iOS" */;
+			buildPhases = (
+				5557E1CF53A52EA24D0B7E95 /* Build Rust Code */,
+				A816C26A23D7AFF9E8884BBB /* Sources */,
+				61186EB90DEF9776A98E368A /* Resources */,
+				6ECF19B921C2F18DC195C2FC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nuxtor_iOS;
+			packageProductDependencies = (
+			);
+			productName = nuxtor_iOS;
+			productReference = 7D19A3D084922CB7F1FC43C7 /* Nuxtor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46B84F68214F3425BCBB7E42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 8DC27239E6537A904961DF01 /* Build configuration list for PBXProject "nuxtor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 70CDACAAC9829AB234B6D7C5;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8387EB83066CD38452993DE /* nuxtor_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61186EB90DEF9776A98E368A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E117B18F66C9787CE551C9F /* Assets.xcassets in Resources */,
+				8B27DBF032FCAEE83E5CC48B /* LaunchScreen.storyboard in Resources */,
+				F40DC036CB35B1880728E4DD /* assets in Resources */,
+				528F8C242DB1621F8F0D878A /* libapp.a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5557E1CF53A52EA24D0B7E95 /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bun tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A816C26A23D7AFF9E8884BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2873873541D2803BF068146D /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3243179CC18EE9858549A5C1 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		7304C87908E416CE0439AFFB /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = nuxtor_iOS/nuxtor_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q5UN347YU9;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = nuxtor_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspadari.nuxtor;
+				PRODUCT_NAME = "Nuxtor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = debug;
+		};
+		CC4F5E6925BA103BC60A0D8A /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		EFD7642BB20CD1E9C2ED5CE3 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = nuxtor_iOS/nuxtor_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q5UN347YU9;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = nuxtor_iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nicolaspadari.nuxtor;
+				PRODUCT_NAME = "Nuxtor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18CC5F46D7C42F18C836A129 /* Build configuration list for PBXNativeTarget "nuxtor_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7304C87908E416CE0439AFFB /* debug */,
+				EFD7642BB20CD1E9C2ED5CE3 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		8DC27239E6537A904961DF01 /* Build configuration list for PBXProject "nuxtor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC4F5E6925BA103BC60A0D8A /* debug */,
+				3243179CC18EE9858549A5C1 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46B84F68214F3425BCBB7E42 /* Project object */;
+}

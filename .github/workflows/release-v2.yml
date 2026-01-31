@@ -1,0 +1,136 @@
+# WIP version of new action - not ready yet
+
+name: release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-tauri:
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - platform: 'macos-latest'
+          args: '--verbose --target universal-apple-darwin --debug'
+        - platform: 'macos-latest'
+          args: '--verbose --target aarch64-apple-darwin --debug'
+        - platform: 'macos-latest'
+          args: '--verbose --target x86_64-apple-darwin --debug'
+        - platform: 'ubuntu-22.04'
+          args: '--verbose --debug'
+        - platform: 'windows-latest'
+          args: '--verbose --debug'
+        - platform: 'ubuntu-24.04-arm'
+          args: '--verbose --debug'
+        - platform: 'windows-11-arm'
+          args: '--verbose --debug'
+        - platform: 'ubuntu-latest'
+          args: '--verbose --debug'
+          mobile: 'android'
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v6
+
+      # Node
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.6
+
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+
+      - name: install frontend dependencies
+        run: bun install
+
+      # Rust
+      - name: install Rust stable (desktop)
+        if: matrix.mobile == ''
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: install Rust stable (android)
+        if: matrix.mobile == 'android'
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android
+
+      - name: install Rust stable (ios)
+        if: matrix.mobile == 'ios'
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios
+
+      # JDK
+      - name: Set up JDK
+        if: matrix.mobile == 'android'
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        if: matrix.mobile == 'android'
+        uses: android-actions/setup-android@v3
+
+      - name: Setup Android NDK
+        if: matrix.mobile == 'android'
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: r29
+          link-to-sdk: true
+
+      # XCode
+      - uses: maxim-lobanov/setup-xcode@v1
+        if: matrix.mobile == 'ios'
+        with:
+          xcode-version: 26.1
+
+      # Apple key
+      - name: setup Apple API key
+        if: matrix.mobile == 'ios'
+        run: |
+          APPLE_API_KEY_PATH="$RUNNER_TEMP/AuthKey_${{ secrets.APPLE_API_KEY_ID }}.p8"
+          echo "${{ secrets.APPLE_API_KEY }}" > $APPLE_API_KEY_PATH
+          echo "APPLE_API_KEY_PATH=$APPLE_API_KEY_PATH" >> $GITHUB_ENV
+          echo "API_PRIVATE_KEYS_DIR=$RUNNER_TEMP" >> $GITHUB_ENV
+
+      # System
+      - name: install dependencies (ubuntu only)
+        if: matrix.platform == 'ubuntu-22.04' || matrix.platform == 'ubuntu-24.04-arm'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev
+
+      - name: init mobile project
+        if: matrix.mobile != ''
+        run: |
+          pnpm dlx @tauri-apps/cli ${{ matrix.mobile }} init
+
+      - name: Preconfigured Tauri Project
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+        with:
+          projectPath: .
+          tagName: nuxtor-v__VERSION__
+          releaseName: Nuxtor v__VERSION__
+          releaseBody: After installing the Apple app you have to run "xattr -c /Applications/Nuxtor.app" once before launching
+          releaseDraft: false
+          prerelease: false
+          args: ${{ matrix.args }}
+          retryAttempts: 1
+          uploadPlainBinary: true
+          uploadWorkflowArtifacts: true
+          uploadUpdaterSignatures: true
+          mobile: ${{ matrix.mobile }}
