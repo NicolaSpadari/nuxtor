@@ -15,7 +15,7 @@
 		"lint": "eslint . --fix",
 		"bump": "bumpp",
 		"tauri": "tauri",
-		"tauri:dev": "tauri dev",
+		"tauri:dev": "npx tsx scripts/tauri-dev.ts",
 		"tauri:dev:ios": "tauri ios dev",
 		"tauri:dev:android": "tauri android dev",
 		"tauri:build": "tauri build",
