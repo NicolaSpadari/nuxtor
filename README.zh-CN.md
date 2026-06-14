@@ -17,7 +17,9 @@
   <img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
 </p>
 
-[English](README.md) | [简体中文](README.zh-CN.md)
+<p align="center">
+  <a href="README.md">Endlish</a> | <a href="README.zh-CN.md">简体中文</a>
+</p>
 
 <p align="center">
   <img src="./public/screenshot.png" alt="NUXTOR 截图">
