@@ -131,6 +131,8 @@ bun tauri:build:ios
 Android 开发
 
 需 Android Studio + SDK + NDK 环境。
+
+```bash
 # 首次配置
 tauri android init
 
@@ -139,6 +141,7 @@ bun tauri:android:dev
 
 # 生产构建
 bun tauri:build:android
+```
 
 
 注意事项
