@@ -142,19 +142,16 @@ In Xcode:
 
 Requires **Android Studio + SDK + NDK**.
 
-bash
-First-time setup
-
+```bash
+# First-time setup
 tauri android init
 
-Development
-
+# Development
 bun tauri:android:dev
 
-Production build
-
+# Production build
 bun tauri:build:android
-
+```
 
 ---
 
