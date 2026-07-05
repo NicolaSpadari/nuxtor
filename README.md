@@ -1,116 +1,169 @@
 <p align="center">
-    <img width="150" src="./public/logo.png" alt="logo">
+  <img width="150" src="./public/logo.png" alt="NUXTOR Logo">
 </p>
+
 <h1 align="center">NUXTOR</h1>
+
 <p align="center">
-A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a>, made with <a href="https://nuxt.com">Nuxt 4</a> and <a href="https://v2.tauri.app">Tauri 2</a>
-<br>
-Build super fast desktop applications!
+  A spiritual successor of <a href="https://github.com/NicolaSpadari/vitauri">ViTauri</a>,
+  built with <a href="https://nuxt.com">Nuxt 4</a> and
+  <a href="https://v2.tauri.app">Tauri 2</a>.
+  <br />
+  Build blazing fast desktop & mobile applications.
 </p>
 
-<br />
-
-<p float="left">
-	<img src="https://img.shields.io/github/package-json/v/NicolaSpadari/nuxtor" />
-	<img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
+<p align="center">
+  <img src="https://img.shields.io/github/package-json/v/NicolaSpadari/nuxtor" />
+  <img src="https://img.shields.io/github/license/NicolaSpadari/nuxtor" />
 </p>
 
-<br />
+<p align="center">
+  <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
+</p>
 
-<div align="center">
-<img src="./public/screenshot.png">
-</div>
+<p align="center">
+  <img src="./public/screenshot.png" alt="NUXTOR Screenshot">
+</p>
 
-<p align="center">Powered by Nuxt 4</p>
+<p align="center"><strong>Powered by Nuxt 4</strong></p>
 
-Check more screenshots at [preview](https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md)
+📸 **Live Previews**:  
+[iOS · Android · Commands · File System · Notifications · OS Info · Storage · Webview](https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md)
 
-<br />
+---
 
-## Technologies run-down
+## Tech Stack
 
 - Nuxt v4
 - Tauri v2
-- NuxtUI v4
-- TailwindCSS v4
-- Typescript
+- Nuxt UI v4
+- Tailwind CSS v4
+- TypeScript
 - ESLint
-- Auto imports (for Tauri api too!)
+- Auto imports (including Tauri APIs)
 
-## Functionalities
+---
+
+## What It Does
 
 - Run shell commands from the app
-- Send custom notifications to the client (remember to turn on/grant notifications in your computer settings)
-- Display OS related informations
-- Store and retrieve data locally
-- Show tray icon
-- Support all Nuxt functionalities (routing/layout/middleware/modules/etc...)
+- Send OS-level notifications
+- Access system information
+- Persistent key–value storage
+- System tray icon
+- Full Nuxt feature support (routing, layouts, middleware, modules, etc.)
+
+---
+
+## Who Is This For?
+
+✅ Developers who want **Nuxt DX** in a desktop / mobile app  
+✅ Teams already using **Vue / Nuxt / Tailwind**  
+✅ Projects targeting **Windows / macOS / Linux / iOS / Android**  
+
+❌ Not suitable if you require hosted SSR (SSR is intentionally disabled)
+
+---
 
 ## Setup
 
-  - Before running this app, you need to configure your environment with Rust. Take a look at the [Tauri docs](https://tauri.app/start/prerequisites).
-  - This project enforces [bun](https://bun.sh). In order to use another package manager you need to update `package.json` and `tauri.conf.json`
-  - The frontend runs on the usual port `3000` of Nuxt, the Tauri server uses the port `3001`. This settings are customizable in the `nuxt.config.ts` and `tauri.conf.json`.
-  - Once ready, follow these commands:
+> 🚀 **Bun is the default package manager.**  
+> To use npm / pnpm / yarn, update `package.json` and `tauri.conf.json`.
 
-  ```sh
-  # use this template
-  $ npx degit NicolaSpadari/nuxtor my-nuxtor-app
+- Frontend: `http://localhost:3000`
+- Tauri backend: `http://localhost:3001`
+- Ports are configurable in `nuxt.config.ts` and `tauri.conf.json`
 
-  # go into the folder
-  $ cd my-nuxtor-app
+bash
+Scaffold a new project
 
-  # install dependencies
-  $ bun install
+npx degit NicolaSpadari/nuxtor my-nuxtor-app
 
-  # start the project
-  $ bun run tauri:dev
-  ```
+cd my-nuxtor-app
 
-  This will run the Nuxt frontend and will launch the Tauri window.
+Install dependencies
+
+bun install
+
+Start development mode
+
+bun run tauri:dev
+
+
+> ⚠️ **Nuxt SSR is disabled** so Tauri can act as the backend.  
+> Routing, middleware, composables, and all other Nuxt features remain fully functional.
+
+---
 
 ## Build
 
-  ```sh
-  $ bun run tauri:build
-  ```
+bash
+bun run tauri:build
 
-This command will generate the Nuxt static output and bundle the project under `src-tauri/target`.
 
-## Debug
+Output: `src-tauri/target`
 
-  ```sh
-  $ bun run tauri:build:debug
-  ```
+### Debug Build
 
-The same Tauri bundle will generate under `src-tauri/target`, but with the ability to open the console.
+bash
+bun run tauri:build:debug
 
-## iOS development
 
-- Requires a MacOS system, XCode installed
-- You must first setup your environment and XCode, as per [documentation](https://tauri.app/develop/#developing-your-mobile-application)
-- Make sure to have created a development team in XCode and you have choosen command line tools location in settings
-- You must install homebrew and through that install `cocoapods`
-- First time only, run `tauri ios init`
-- If everything is installed correctly, running `bun tauri:ios:dev` should fire up the iOS simulator and install Nuxtor
-- In XCode you should set All, Debug, Release "Automatically manage signing" and choose yout personal Team
-- Running `bun tauri:build:ios` will generate the .ipa file
+Enables console access inside the bundled app.
 
-## Android development
+---
 
-- Requires Android Studio installed
-- You must first setup your environment and Android SDK, as per [documentation](https://tauri.app/develop/#developing-your-mobile-application)
-- Make sure to have installed all SDK components and NDK as indicated
-- First time only, run `tauri android init`
-- If everything is installed correctly, running `bun tauri:android:dev` should fire up the Android emulator and install Nuxtor
-- Running `bun tauri:build:android` will generate the .apk file
+## iOS Development
+
+Requires **macOS + Xcode**.
+
+bash
+First-time setup
+
+brew install cocoapods
+tauri ios init
+
+Development
+
+bun tauri:ios:dev
+
+Production build
+
+bun tauri:build:ios
+
+
+In Xcode:
+- Enable **Automatically manage signing**
+- Select your personal **Development Team**
+
+---
+
+## Android Development
+
+Requires **Android Studio + SDK + NDK**.
+
+```bash
+# First-time setup
+tauri android init
+
+# Development
+bun tauri:android:dev
+
+# Production build
+bun tauri:build:android
+```
+
+---
 
 ## Notes
 
-- Tauri v2 brings some big refactors, such as packages names and permission management. New permissions have to be granted under `src-tauri/capabilities/main.json`
-- Tauri functions are auto imported with the help of a custom module, named like `useTauri<LibraryName>`. If another Tauri plugin is added, then the module has to be updated to support its functions under `app/modules/tauri.ts`
-- As per [documentation](https://tauri.app/start/frontend/nuxt/#checklist), Nuxt SSR must be disabled in order for Tauri to act as the backend. Still, all Nuxt goodies will be functional.
+- Tauri v2 introduces breaking changes (package names, permissions).
+- Permissions must be declared in `src-tauri/capabilities/main.json`.
+- Tauri APIs are auto-imported via `app/modules/tauri.ts`.
+- Adding new Tauri plugins requires updating this module.
+
+---
 
 ## License
 
-MIT License © 2024-PRESENT [NicolaSpadari](https://github.com/NicolaSpadari)
+MIT © 2024–Present [Nicola Spadari](https://github.com/NicolaSpadari)
