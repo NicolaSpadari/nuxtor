@@ -79,6 +79,8 @@ https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md
 • Tauri 后端：http://localhost:3001
 
 • 端口可在 nuxt.config.ts 与 tauri.conf.json 中配置
+
+```sh
 # 初始化新项目
 npx degit NicolaSpadari/nuxtor my-nuxtor-app
 
@@ -89,7 +91,7 @@ bun install
 
 # 启动开发模式
 bun run tauri:dev
-
+```
 
 ⚠️ Nuxt SSR 已被禁用，以便 Tauri 充当后端服务。  
 
@@ -97,21 +99,25 @@ bun run tauri:dev
 
 构建打包
 
+```sh
 bun run tauri:build
-
+```
 
 输出目录：src-tauri/target
 
 调试版构建
 
+```sh
 bun run tauri:build:debug
-
+```
 
 启用后可在打包后的应用中访问控制台。
 
 iOS 开发
 
 需 macOS + Xcode 环境。
+
+```sh
 # 首次配置
 brew install cocoapods
 tauri ios init
@@ -121,7 +127,7 @@ bun tauri:ios:dev
 
 # 生产构建
 bun tauri:build:ios
-
+```
 
 在 Xcode 中：
 • 开启 Automatically manage signing（自动管理签名）
@@ -132,7 +138,7 @@ Android 开发
 
 需 Android Studio + SDK + NDK 环境。
 
-```bash
+```sh
 # 首次配置
 tauri android init
 

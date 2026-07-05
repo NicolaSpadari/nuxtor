@@ -74,21 +74,18 @@
 - Tauri backend: `http://localhost:3001`
 - Ports are configurable in `nuxt.config.ts` and `tauri.conf.json`
 
-bash
-Scaffold a new project
-
+```sh
+# Scaffold a new project
 npx degit NicolaSpadari/nuxtor my-nuxtor-app
 
 cd my-nuxtor-app
 
-Install dependencies
-
+# Install dependencies
 bun install
 
-Start development mode
-
+# Start development mode
 bun run tauri:dev
-
+```
 
 > ⚠️ **Nuxt SSR is disabled** so Tauri can act as the backend.  
 > Routing, middleware, composables, and all other Nuxt features remain fully functional.
@@ -97,17 +94,17 @@ bun run tauri:dev
 
 ## Build
 
-bash
+```sh
 bun run tauri:build
-
+```
 
 Output: `src-tauri/target`
 
 ### Debug Build
 
-bash
+```sh
 bun run tauri:build:debug
-
+```
 
 Enables console access inside the bundled app.
 
@@ -117,20 +114,17 @@ Enables console access inside the bundled app.
 
 Requires **macOS + Xcode**.
 
-bash
-First-time setup
-
+```sh
+# First-time setup
 brew install cocoapods
 tauri ios init
 
-Development
-
+# Development
 bun tauri:ios:dev
 
-Production build
-
+# Production build
 bun tauri:build:ios
-
+```
 
 In Xcode:
 - Enable **Automatically manage signing**
@@ -142,7 +136,7 @@ In Xcode:
 
 Requires **Android Studio + SDK + NDK**.
 
-```bash
+```sh
 # First-time setup
 tauri android init
 
