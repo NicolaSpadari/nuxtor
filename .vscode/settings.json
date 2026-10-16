@@ -1,21 +1,15 @@
 {
-	// Enable the ESlint flat config support
-	"eslint.useFlatConfig": true,
-
 	// Use eslint as default formatter
 	"editor.formatOnSave": false,
+
+	// Use workspace TypeScript (typescript-native-bridge, tsgo-backed)
+	"js/ts.tsdk.path": "node_modules/typescript/lib",
+	"js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
 	// Tailwind compatibility
 	"tailwindCSS.validate": true,
 	"tailwindCSS.experimental.classRegex": [
-		[
-			"ui:\\s*{([^)]*)\\s*}",
-			"[\"'`]([^\"'`]*).*?[\"'`]"
-		],
-		[
-			"/\\*\\s?ui\\s?\\*/\\s*{([^;]*)}",
-			":\\s*[\"'`]([^\"'`]*).*?[\"'`]"
-		]
+		["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
 	],
 	"tailwindCSS.classAttributes": [
 		"class",

@@ -70,9 +70,7 @@ https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md
 
 环境配置
 
-🚀 默认包管理器为 Bun。  
-
-若需使用 npm / pnpm / yarn，请自行修改 package.json 与 tauri.conf.json。
+🚀 包管理器为 pnpm（版本见 package.json 的 packageManager，Node 版本见 .nvmrc）。
 
 • 前端地址：http://localhost:3000
 
@@ -87,10 +85,10 @@ npx degit NicolaSpadari/nuxtor my-nuxtor-app
 cd my-nuxtor-app
 
 # 安装依赖
-bun install
+pnpm install
 
 # 启动开发模式
-bun run tauri:dev
+pnpm tauri:dev
 ```
 
 ⚠️ Nuxt SSR 已被禁用，以便 Tauri 充当后端服务。  
@@ -100,7 +98,7 @@ bun run tauri:dev
 构建打包
 
 ```sh
-bun run tauri:build
+pnpm tauri:build
 ```
 
 输出目录：src-tauri/target
@@ -108,7 +106,7 @@ bun run tauri:build
 调试版构建
 
 ```sh
-bun run tauri:build:debug
+pnpm tauri:build:debug
 ```
 
 启用后可在打包后的应用中访问控制台。
@@ -123,10 +121,10 @@ brew install cocoapods
 tauri ios init
 
 # 开发模式
-bun tauri:ios:dev
+pnpm tauri:dev:ios
 
 # 生产构建
-bun tauri:build:ios
+pnpm tauri:build:ios
 ```
 
 在 Xcode 中：
@@ -143,10 +141,10 @@ Android 开发
 tauri android init
 
 # 开发模式
-bun tauri:android:dev
+pnpm tauri:dev:android
 
 # 生产构建
-bun tauri:build:android
+pnpm tauri:build:android
 ```
 
 

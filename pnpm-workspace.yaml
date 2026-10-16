@@ -1,0 +1,11 @@
+overrides:
+  # tsgo-backed TypeScript fork (exact pin required)
+  typescript: npm:typescript-native-bridge@6.0.3-bridge.18.tsgo.7.0.2
+shamefullyHoist: true
+strictPeerDependencies: false
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  unrs-resolver: true
+  vue-demi: true

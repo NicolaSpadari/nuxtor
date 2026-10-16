@@ -67,8 +67,7 @@
 
 ## Setup
 
-> 🚀 **Bun is the default package manager.**  
-> To use npm / pnpm / yarn, update `package.json` and `tauri.conf.json`.
+> 🚀 **pnpm is the package manager** (version pinned in `packageManager`, Node version in `.nvmrc`).
 
 - Frontend: `http://localhost:3000`
 - Tauri backend: `http://localhost:3001`
@@ -81,10 +80,10 @@ npx degit NicolaSpadari/nuxtor my-nuxtor-app
 cd my-nuxtor-app
 
 # Install dependencies
-bun install
+pnpm install
 
 # Start development mode
-bun run tauri:dev
+pnpm tauri:dev
 ```
 
 > ⚠️ **Nuxt SSR is disabled** so Tauri can act as the backend.  
@@ -95,7 +94,7 @@ bun run tauri:dev
 ## Build
 
 ```sh
-bun run tauri:build
+pnpm tauri:build
 ```
 
 Output: `src-tauri/target`
@@ -103,7 +102,7 @@ Output: `src-tauri/target`
 ### Debug Build
 
 ```sh
-bun run tauri:build:debug
+pnpm tauri:build:debug
 ```
 
 Enables console access inside the bundled app.
@@ -120,10 +119,10 @@ brew install cocoapods
 tauri ios init
 
 # Development
-bun tauri:ios:dev
+pnpm tauri:dev:ios
 
 # Production build
-bun tauri:build:ios
+pnpm tauri:build:ios
 ```
 
 In Xcode:
@@ -141,10 +140,10 @@ Requires **Android Studio + SDK + NDK**.
 tauri android init
 
 # Development
-bun tauri:android:dev
+pnpm tauri:dev:android
 
 # Production build
-bun tauri:build:android
+pnpm tauri:build:android
 ```
 
 ---

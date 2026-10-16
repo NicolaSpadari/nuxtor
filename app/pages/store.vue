@@ -47,10 +47,9 @@
 	});
 
 	const toast = useToast();
-	const autosave = ref(false);
-
 	const store = await useTauriStoreLoad("store.bin", {
-		autoSave: autosave.value
+		defaults: {},
+		autoSave: false
 	});
 
 	const getStoreValue = async () => {

@@ -7,6 +7,10 @@ import * as tauriShell from "@tauri-apps/plugin-shell";
 import * as tauriStore from "@tauri-apps/plugin-store";
 import { addImports, defineNuxtModule } from "nuxt/kit";
 
+interface ModuleOptions {
+	prefix: boolean
+}
+
 const capitalize = (name: string) => {
 	return name.charAt(0).toUpperCase() + name.slice(1);
 };
@@ -27,13 +31,16 @@ export default defineNuxtModule<ModuleOptions>({
 		configKey: "tauri"
 	},
 	defaults: {
-		prefix: "useTauri"
+		prefix: true
 	},
-	setup(options) {
+	setup(options, nuxt) {
+		nuxt.options.vite.optimizeDeps ||= {};
+		nuxt.options.vite.optimizeDeps.include ||= [];
+		nuxt.options.vite.optimizeDeps.include.push(...tauriModules.map(({ importPath }) => importPath));
+
 		tauriModules.forEach(({ module, prefix, importPath }) => {
 			Object.keys(module).filter((name) => name !== "default").forEach((name) => {
-				const prefixedName = `${options.prefix}${prefix}` || "";
-				const as = prefixedName ? prefixedName + capitalize(name) : name;
+				const as = options.prefix ? `useTauri${prefix}${capitalize(name)}` : name;
 				addImports({ from: importPath, name, as });
 			});
 		});

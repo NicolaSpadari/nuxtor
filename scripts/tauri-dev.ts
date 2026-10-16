@@ -33,11 +33,11 @@ async function main(): Promise<void> {
 	const tauriConfig = JSON.stringify({
 		build: {
 			devUrl: `http://localhost:${port}`,
-			beforeDevCommand: `bun run dev --port ${port}`
+			beforeDevCommand: `pnpm dev --port ${port}`
 		}
 	});
 
-	const tauri = spawn("bun", ["run", "tauri", "dev", "--config", tauriConfig], {
+	const tauri = spawn("pnpm", ["tauri", "dev", "--config", tauriConfig], {
 		stdio: "inherit",
 		cwd: process.cwd()
 	});

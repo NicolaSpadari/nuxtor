@@ -1,4 +1,10 @@
 {
+	// Same behaviour as .vscode/settings.json: no formatter, ESLint --fix on save.
+	// ESLint is attached by default only to JavaScript, TypeScript, TSX and Vue.js:
+	// the other languages enable it through "language_servers".
+	"hard_tabs": true,
+	"tab_size": 4,
+
 	// Tailwind CSS language server settings
 	"lsp": {
 		"tailwindcss-language-server": {
@@ -13,55 +19,57 @@
 		}
 	},
 
-	// Language-specific settings
 	"languages": {
 		"CSS": {
 			"language_servers": ["tailwindcss-language-server", "!vscode-css-language-server"]
 		},
 		"JavaScript": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }]
 		},
 		"TypeScript": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }]
+		},
+		"TSX": {
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }]
 		},
 		"Vue.js": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }]
 		},
 		"HTML": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		},
 		"Markdown": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		},
 		"JSON": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		},
 		"JSONC": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		},
 		"YAML": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"hard_tabs": false,
+			"tab_size": 2,
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		},
 		"TOML": {
-			"formatter": {
-				"code_action": "source.fixAll.eslint"
-			}
+			"format_on_save": "on",
+			"formatter": [{ "code_action": "source.fixAll.eslint" }],
+			"language_servers": ["eslint", "..."]
 		}
 	}
 }
