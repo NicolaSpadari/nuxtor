@@ -1,4 +1,5 @@
 {
+	"$schema": "https://schema.tauri.app/config/2",
 	"bundle": {
 		"active": true,
 		"targets": "all",
@@ -23,6 +24,9 @@
 		"macOS": {},
 		"linux": {
 			"deb": {}
+		},
+		"iOS": {
+			"minimumSystemVersion": "15.0"
 		}
 	},
 	"build": {
@@ -38,11 +42,12 @@
 	"app": {
 		"windows": [
 			{
+				"label": "main",
 				"title": "Nuxtor",
 				"width": 1366,
 				"height": 768,
 				"minWidth": 375,
-				"minHeight": 812,
+				"minHeight": 600,
 				"resizable": true,
 				"fullscreen": false
 			}

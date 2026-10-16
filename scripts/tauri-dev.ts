@@ -39,6 +39,7 @@ async function main(): Promise<void> {
 
 	const tauri = spawn("pnpm", ["tauri", "dev", "--config", tauriConfig], {
 		stdio: "inherit",
+		shell: process.platform === "win32",
 		cwd: process.cwd()
 	});
 

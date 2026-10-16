@@ -72,11 +72,9 @@ https://github.com/NicolaSpadari/nuxtor/blob/main/preview.md
 
 🚀 包管理器为 pnpm（版本见 package.json 的 packageManager，Node 版本见 .nvmrc）。
 
-• 前端地址：http://localhost:3000
+• 开发服务器：http://localhost:3000（端口被占用时 pnpm tauri:dev 会自动选择下一个空闲端口）
 
-• Tauri 后端：http://localhost:3001
-
-• 端口可在 nuxt.config.ts 与 tauri.conf.json 中配置
+• 需满足 [Tauri 前置条件](https://v2.tauri.app/start/prerequisites/)（Rust ≥ 1.90）
 
 ```sh
 # 初始化新项目
@@ -113,50 +111,48 @@ pnpm tauri:build:debug
 
 iOS 开发
 
-需 macOS + Xcode 环境。
+需 macOS + Xcode + CocoaPods 环境。Xcode 项目已生成在 src-tauri/gen/apple。
 
 ```sh
-# 首次配置
-brew install cocoapods
-tauri ios init
-
-# 开发模式
+# 模拟器
 pnpm tauri:dev:ios
+
+# 真机（开发服务器对局域网开放）
+pnpm tauri:dev:ios --host
+
+# 在 Xcode 中打开项目
+pnpm tauri:dev:ios --open
 
 # 生产构建
 pnpm tauri:build:ios
 ```
 
-在 Xcode 中：
-• 开启 Automatically manage signing（自动管理签名）
-
-• 选择个人 Development Team（开发团队）
+在 .env 中设置开发团队（APPLE_DEVELOPMENT_TEAM，参考 .env.example），或在 Xcode 的 Signing & Capabilities 中设置。
 
 Android 开发
 
-需 Android Studio + SDK + NDK 环境。
+需 Android Studio + SDK + NDK 环境（需设置 ANDROID_HOME、NDK_HOME 与 JAVA_HOME）。Gradle 项目已生成在 src-tauri/gen/android。
 
 ```sh
-# 首次配置
-tauri android init
-
-# 开发模式
+# 模拟器或已连接的设备
 pnpm tauri:dev:android
+
+# 在 Android Studio 中打开项目
+pnpm tauri:dev:android --open
 
 # 生产构建
 pnpm tauri:build:android
 ```
 
+升级 Tauri CLI 后，请使用 pnpm tauri android init / pnpm tauri ios init 重新生成移动端项目。
 
 注意事项
 
-• Tauri v2 包含破坏性变更（包名、权限等）。
+• 权限位于 src-tauri/capabilities/：main.json 适用于所有平台，desktop.json 仅用于桌面端功能（托盘、菜单、shell）。
 
-• 权限需在 src-tauri/capabilities/main.json 中声明。
+• Tauri API 通过 modules/tauri.ts 以 useTauri<模块><函数> 的形式自动导入。
 
-• Tauri API 通过 app/modules/tauri.ts 实现自动导入。
-
-• 新增 Tauri 插件时需同步更新该模块。
+• 新增 Tauri 插件时需在 src-tauri/src/lib.rs、capabilities 以及该模块中同步注册。
 
 开源协议
 

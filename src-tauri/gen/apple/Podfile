@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 
 target 'nuxtor_iOS' do
-platform :ios, '14.0'
+platform :ios, '15.0'
   # Pods for nuxtor_iOS
 end
 

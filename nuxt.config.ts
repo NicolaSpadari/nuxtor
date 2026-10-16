@@ -1,7 +1,3 @@
-import process from "node:process";
-
-const host = process.env.TAURI_DEV_HOST;
-
 export default defineNuxtConfig({
 	modules: [
 		"@nuxt/eslint",
@@ -10,6 +6,7 @@ export default defineNuxtConfig({
 		"nuxt-svgo"
 	],
 	ssr: false,
+	ignore: ["**/src-tauri/**"],
 	app: {
 		head: {
 			title: "Nuxtor",
@@ -75,17 +72,7 @@ export default defineNuxtConfig({
 			include: ["zod"]
 		},
 		server: {
-			strictPort: true,
-			ws: host
-				? {
-					protocol: "ws",
-					host,
-					port: 3001
-				}
-				: undefined,
-			watch: {
-				ignored: ["**/src-tauri/**"]
-			}
+			strictPort: true
 		}
 	},
 	vue: {
@@ -96,8 +83,9 @@ export default defineNuxtConfig({
 			include: ["../scripts/**/*"]
 		}
 	},
+	// Makes the dev server reachable from physical iOS devices
 	devServer: {
-		host: host || "0.0.0.0"
+		host: "0"
 	},
 	sourcemap: {
 		client: false,
@@ -106,5 +94,6 @@ export default defineNuxtConfig({
 	devtools: {
 		enabled: false
 	},
+	telemetry: false,
 	compatibilityDate: "2026-10-01"
 });
