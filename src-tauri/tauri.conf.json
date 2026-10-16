@@ -1,4 +1,5 @@
 {
+	"$schema": "https://schema.tauri.app/config/2",
 	"bundle": {
 		"active": true,
 		"targets": "all",
@@ -23,26 +24,30 @@
 		"macOS": {},
 		"linux": {
 			"deb": {}
+		},
+		"iOS": {
+			"minimumSystemVersion": "15.0"
 		}
 	},
 	"build": {
-		"beforeBuildCommand": "bun run generate",
+		"beforeBuildCommand": "pnpm generate",
 		"frontendDist": "../dist",
-		"beforeDevCommand": "bun run dev",
+		"beforeDevCommand": "pnpm dev",
 		"devUrl": "http://localhost:3000"
 	},
 	"productName": "Nuxtor",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"identifier": "com.nicolaspadari.nuxtor",
 	"plugins": {},
 	"app": {
 		"windows": [
 			{
+				"label": "main",
 				"title": "Nuxtor",
 				"width": 1366,
 				"height": 768,
 				"minWidth": 375,
-				"minHeight": 812,
+				"minHeight": 600,
 				"resizable": true,
 				"fullscreen": false
 			}

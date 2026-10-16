@@ -1,4 +1,5 @@
 node_modules
+node-compile-cache
 .DS_Store
 *.log*
 .data
@@ -6,7 +7,14 @@ node_modules
 .nitro
 .cache
 .output
+.llm-memory
+.pnpm-store
 .env
+.env.*
+!.env.example
 .cargo
 dist
 src-tauri/target
+.eslintcache
+tsx-*
+.idea

@@ -10,7 +10,7 @@
 			variant="link"
 			:ui="{
 				viewportWrapper: 'w-2xl absolute-center-h',
-				list: 'gap-x-3'
+				list: 'gap-x-3',
 			}"
 		/>
 		<template #body>
@@ -24,7 +24,7 @@
 			<UBadge variant="subtle">
 				Tauri v{{ tauriVersion }}
 			</UBadge>
-			<UColorModeButton />
+			<SiteColorModeButton />
 		</template>
 	</UHeader>
 </template>

@@ -1,46 +1,19 @@
 {
 	"$schema": "../gen/schemas/desktop-schema.json",
 	"identifier": "main",
-	"description": "Capabilities for the app window",
+	"description": "Capabilities shared by every platform",
 	"windows": [
 		"main",
 		"secondary"
 	],
 	"permissions": [
-		"core:path:default",
-		"core:event:default",
-		"core:window:default",
-		"core:app:default",
-		"core:resources:default",
-		"core:menu:default",
-		"core:tray:default",
-		"shell:allow-open",
-		{
-			"identifier": "shell:allow-execute",
-			"allow": [
-				{
-					"name": "exec-sh",
-					"cmd": "sh",
-					"args": [
-						"-c",
-						{
-							"validator": "\\S+"
-						}
-					],
-					"sidecar": false
-				}
-			]
-		},
+		"core:default",
+		"core:webview:allow-create-webview-window",
+		"opener:default",
 		"notification:default",
-		"os:allow-platform",
-		"os:allow-arch",
-		"os:allow-family",
-		"os:allow-version",
-		"os:allow-locale",
+		"os:default",
 		"fs:allow-document-read",
 		"fs:allow-document-write",
-		"store:default",
-		"core:webview:allow-create-webview",
-		"core:webview:allow-create-webview-window"
+		"store:default"
 	]
 }

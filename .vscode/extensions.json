@@ -2,8 +2,8 @@
 	"recommendations": [
 		"dbaeumer.vscode-eslint",
 		"antfu.file-nesting",
-		"antfu.iconify",
 		"vue.volar",
-		"bradlc.vscode-tailwindcss"
+		"bradlc.vscode-tailwindcss",
+		"antfu.iconify"
 	]
 }

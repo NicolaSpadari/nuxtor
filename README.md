@@ -67,12 +67,10 @@
 
 ## Setup
 
-> 🚀 **Bun is the default package manager.**  
-> To use npm / pnpm / yarn, update `package.json` and `tauri.conf.json`.
+> 🚀 **pnpm is the package manager** (version pinned in `packageManager`, Node version in `.nvmrc`).
 
-- Frontend: `http://localhost:3000`
-- Tauri backend: `http://localhost:3001`
-- Ports are configurable in `nuxt.config.ts` and `tauri.conf.json`
+- Dev server: `http://localhost:3000` (`pnpm tauri:dev` picks the next free port if busy)
+- Requires the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/) (Rust ≥ 1.90)
 
 ```sh
 # Scaffold a new project
@@ -81,10 +79,10 @@ npx degit NicolaSpadari/nuxtor my-nuxtor-app
 cd my-nuxtor-app
 
 # Install dependencies
-bun install
+pnpm install
 
 # Start development mode
-bun run tauri:dev
+pnpm tauri:dev
 ```
 
 > ⚠️ **Nuxt SSR is disabled** so Tauri can act as the backend.  
@@ -95,7 +93,7 @@ bun run tauri:dev
 ## Build
 
 ```sh
-bun run tauri:build
+pnpm tauri:build
 ```
 
 Output: `src-tauri/target`
@@ -103,7 +101,7 @@ Output: `src-tauri/target`
 ### Debug Build
 
 ```sh
-bun run tauri:build:debug
+pnpm tauri:build:debug
 ```
 
 Enables console access inside the bundled app.
@@ -112,49 +110,50 @@ Enables console access inside the bundled app.
 
 ## iOS Development
 
-Requires **macOS + Xcode**.
+Requires **macOS + Xcode + CocoaPods**. The Xcode project is already generated in `src-tauri/gen/apple`.
 
 ```sh
-# First-time setup
-brew install cocoapods
-tauri ios init
+# Simulator
+pnpm tauri:dev:ios
 
-# Development
-bun tauri:ios:dev
+# Physical device (dev server exposed on the network)
+pnpm tauri:dev:ios --host
+
+# Open the project in Xcode
+pnpm tauri:dev:ios --open
 
 # Production build
-bun tauri:build:ios
+pnpm tauri:build:ios
 ```
 
-In Xcode:
-- Enable **Automatically manage signing**
-- Select your personal **Development Team**
+Set your team in `.env` (`APPLE_DEVELOPMENT_TEAM`, see `.env.example`) or in Xcode under **Signing & Capabilities**.
 
 ---
 
 ## Android Development
 
-Requires **Android Studio + SDK + NDK**.
+Requires **Android Studio + SDK + NDK** (`ANDROID_HOME`, `NDK_HOME` and `JAVA_HOME` set). The Gradle project is already generated in `src-tauri/gen/android`.
 
 ```sh
-# First-time setup
-tauri android init
+# Emulator or connected device
+pnpm tauri:dev:android
 
-# Development
-bun tauri:android:dev
+# Open the project in Android Studio
+pnpm tauri:dev:android --open
 
 # Production build
-bun tauri:build:android
+pnpm tauri:build:android
 ```
+
+> After a Tauri CLI upgrade, regenerate the mobile projects with `pnpm tauri android init` / `pnpm tauri ios init`.
 
 ---
 
 ## Notes
 
-- Tauri v2 introduces breaking changes (package names, permissions).
-- Permissions must be declared in `src-tauri/capabilities/main.json`.
-- Tauri APIs are auto-imported via `app/modules/tauri.ts`.
-- Adding new Tauri plugins requires updating this module.
+- Permissions live in `src-tauri/capabilities/`: `main.json` for every platform, `desktop.json` for desktop-only features (tray, menu, shell).
+- Tauri APIs are auto-imported as `useTauri<Module><Function>` via `modules/tauri.ts`.
+- Adding a new Tauri plugin requires registering it in `src-tauri/src/lib.rs`, in the capabilities and in this module.
 
 ---
 

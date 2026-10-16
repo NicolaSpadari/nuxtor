@@ -1,15 +1,12 @@
-import process from "node:process";
-
-const host = process.env.TAURI_DEV_HOST;
-
 export default defineNuxtConfig({
 	modules: [
-		"@vueuse/nuxt",
+		"@nuxt/eslint",
 		"@nuxt/ui",
-		"nuxt-svgo",
-		"reka-ui/nuxt",
-		"@nuxt/eslint"
+		"@vueuse/nuxt",
+		"nuxt-svgo"
 	],
+	ssr: false,
+	ignore: ["**/src-tauri/**"],
 	app: {
 		head: {
 			title: "Nuxtor",
@@ -29,15 +26,9 @@ export default defineNuxtConfig({
 			mode: "out-in"
 		}
 	},
-	css: [
-		"@/assets/css/main.css"
-	],
+	css: ["@/assets/css/main.css"],
 	svgo: {
 		autoImportPath: "@/assets/"
-	},
-	ssr: false,
-	dir: {
-		modules: "app/modules"
 	},
 	imports: {
 		presets: [
@@ -54,41 +45,55 @@ export default defineNuxtConfig({
 			}
 		]
 	},
-	vite: {
-		clearScreen: false,
-		envPrefix: ["VITE_", "TAURI_"],
-		server: {
-			strictPort: true,
-			hmr: host
-				? {
-					protocol: "ws",
-					host,
-					port: 3001
-				}
-				: undefined,
-			watch: {
-				ignored: ["**/src-tauri/**"]
-			}
+	eslint: {
+		config: {
+			standalone: false
 		}
 	},
-	devServer: {
-		host: host || "0.0.0.0"
+	icon: {
+		clientBundle: {
+			scan: {
+				globInclude: ["**/*.{vue,ts}"]
+			}
+		}
 	},
 	router: {
 		options: {
 			scrollBehaviorType: "smooth"
 		}
 	},
-	eslint: {
-		config: {
-			standalone: false
+	experimental: {
+		typedPages: true
+	},
+	vite: {
+		clearScreen: false,
+		envPrefix: ["VITE_", "TAURI_"],
+		optimizeDeps: {
+			include: ["zod"]
+		},
+		server: {
+			strictPort: true
 		}
+	},
+	vue: {
+		optionsApi: false
+	},
+	typescript: {
+		nodeTsConfig: {
+			include: ["../scripts/**/*"]
+		}
+	},
+	// Makes the dev server reachable from physical iOS devices
+	devServer: {
+		host: "0"
+	},
+	sourcemap: {
+		client: false,
+		server: false
 	},
 	devtools: {
 		enabled: false
 	},
-	experimental: {
-		typedPages: true
-	},
-	compatibilityDate: "2026-01-01"
+	telemetry: false,
+	compatibilityDate: "2026-10-01"
 });

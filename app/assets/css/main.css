@@ -14,7 +14,9 @@
 }
 
 @layer base {
-	-webkit-tap-highlight-color: transparent;
+	html {
+		-webkit-tap-highlight-color: transparent;
+	}
 }
 
 @layer utilities {

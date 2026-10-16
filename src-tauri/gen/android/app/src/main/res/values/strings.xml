@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Nuxtor</string>
-    <string name="main_activity_title">Nuxtor</string>
+    <string name="app_name">"Nuxtor"</string>
+    <string name="main_activity_title">"Nuxtor"</string>
 </resources>
