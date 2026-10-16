@@ -56,8 +56,8 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-        CFBundleShortVersionString: 1.6.0
-        CFBundleVersion: "1.6.0"
+        CFBundleShortVersionString: 1.7.0
+        CFBundleVersion: "1.7.0"
     entitlements:
       path: nuxtor_iOS/nuxtor_iOS.entitlements
     scheme:

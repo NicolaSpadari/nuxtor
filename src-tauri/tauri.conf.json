@@ -36,7 +36,7 @@
 		"devUrl": "http://localhost:3000"
 	},
 	"productName": "Nuxtor",
-	"version": "1.6.0",
+	"version": "1.7.0",
 	"identifier": "com.nicolaspadari.nuxtor",
 	"plugins": {},
 	"app": {
